@@ -1,0 +1,40 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    function isSignedIn() { return request.auth != null; }
+    function isOwner(uid) { return request.auth.uid == uid; }
+
+    match /users/{userId} {
+      allow read, create: if isSignedIn() && isOwner(userId);
+      allow update: if isSignedIn() && isOwner(userId);
+    }
+    match /restaurants/{id} {
+      allow read: if true;
+      allow write: if isSignedIn();
+    }
+    match /ngos/{id} {
+      allow read: if true;
+      allow write: if isSignedIn();
+    }
+    match /foodItems/{id} {
+      allow read: if true;
+      allow write: if isSignedIn();
+    }
+    match /orders/{id} {
+      allow read, write: if isSignedIn();
+    }
+    match /transactions/{id} {
+      allow read, write: if isSignedIn();
+    }
+    match /stockAlerts/{id} {
+      allow read, write: if isSignedIn();
+    }
+    match /donations/{id} {
+      allow read, write: if isSignedIn();
+    }
+    match /notifications/{id} {
+      allow read, write: if isSignedIn();
+    }
+  }
+}

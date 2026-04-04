@@ -1,0 +1,17 @@
+{
+  "indexes": [
+    { "collectionGroup": "foodItems", "queryScope": "COLLECTION", "fields": [{ "fieldPath": "isAvailable", "order": "ASCENDING" }, { "fieldPath": "expiryTime", "order": "ASCENDING" }] },
+    { "collectionGroup": "foodItems", "queryScope": "COLLECTION", "fields": [{ "fieldPath": "category", "order": "ASCENDING" }, { "fieldPath": "isAvailable", "order": "ASCENDING" }, { "fieldPath": "expiryTime", "order": "ASCENDING" }] },
+    { "collectionGroup": "foodItems", "queryScope": "COLLECTION", "fields": [{ "fieldPath": "restaurantId", "order": "ASCENDING" }, { "fieldPath": "createdAt", "order": "DESCENDING" }] },
+    { "collectionGroup": "orders", "queryScope": "COLLECTION", "fields": [{ "fieldPath": "customerId", "order": "ASCENDING" }, { "fieldPath": "createdAt", "order": "DESCENDING" }] },
+    { "collectionGroup": "orders", "queryScope": "COLLECTION", "fields": [{ "fieldPath": "restaurantId", "order": "ASCENDING" }, { "fieldPath": "createdAt", "order": "DESCENDING" }] },
+    { "collectionGroup": "orders", "queryScope": "COLLECTION", "fields": [{ "fieldPath": "restaurantId", "order": "ASCENDING" }, { "fieldPath": "status", "order": "ASCENDING" }, { "fieldPath": "createdAt", "order": "DESCENDING" }] },
+    { "collectionGroup": "orders", "queryScope": "COLLECTION", "fields": [{ "fieldPath": "restaurantId", "order": "ASCENDING" }, { "fieldPath": "createdAt", "order": "ASCENDING" }] },
+    { "collectionGroup": "transactions", "queryScope": "COLLECTION", "fields": [{ "fieldPath": "userId", "order": "ASCENDING" }, { "fieldPath": "createdAt", "order": "DESCENDING" }] },
+    { "collectionGroup": "donations", "queryScope": "COLLECTION", "fields": [{ "fieldPath": "status", "order": "ASCENDING" }, { "fieldPath": "createdAt", "order": "DESCENDING" }] },
+    { "collectionGroup": "donations", "queryScope": "COLLECTION", "fields": [{ "fieldPath": "restaurantId", "order": "ASCENDING" }, { "fieldPath": "createdAt", "order": "DESCENDING" }] },
+    { "collectionGroup": "donations", "queryScope": "COLLECTION", "fields": [{ "fieldPath": "ngoId", "order": "ASCENDING" }, { "fieldPath": "status", "order": "ASCENDING" }, { "fieldPath": "createdAt", "order": "DESCENDING" }] },
+    { "collectionGroup": "notifications", "queryScope": "COLLECTION", "fields": [{ "fieldPath": "userId", "order": "ASCENDING" }, { "fieldPath": "createdAt", "order": "DESCENDING" }] }
+  ],
+  "fieldOverrides": []
+}

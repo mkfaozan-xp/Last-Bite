@@ -1,0 +1,2362 @@
+{
+  "documents": [
+    {
+      "name": "projects/last-bite-179b2/databases/(default)/documents/foodItems/38w1yjT1Imzea1fdIKvl",
+      "fields": {
+        "isVeg": {
+          "booleanValue": true
+        },
+        "expiryHours": {
+          "integerValue": "4"
+        },
+        "expiryTime": {
+          "timestampValue": "2026-04-03T23:47:44.288Z"
+        },
+        "discountedPrice": {
+          "integerValue": "16"
+        },
+        "category": {
+          "stringValue": "fast-food"
+        },
+        "originalPrice": {
+          "integerValue": "32"
+        },
+        "description": {
+          "stringValue": "fd"
+        },
+        "createdAt": {
+          "timestampValue": "2026-04-03T19:47:44.487Z"
+        },
+        "quantity": {
+          "integerValue": "31"
+        },
+        "batchId": {
+          "stringValue": "B1775245664288"
+        },
+        "restaurantName": {
+          "stringValue": "Protya Basak"
+        },
+        "isAvailable": {
+          "booleanValue": false
+        },
+        "restaurantId": {
+          "stringValue": "ETLMIvcRNxXn9xlj72hsnCJoTFo2"
+        },
+        "isDonation": {
+          "booleanValue": false
+        },
+        "name": {
+          "stringValue": "23"
+        },
+        "rating": {
+          "integerValue": "0"
+        },
+        "updatedAt": {
+          "timestampValue": "2026-04-04T05:20:51.207Z"
+        }
+      },
+      "createTime": "2026-04-03T19:47:44.505438Z",
+      "updateTime": "2026-04-04T05:20:51.242213Z"
+    },
+    {
+      "name": "projects/last-bite-179b2/databases/(default)/documents/foodItems/4wQYZOmPWrRxiudrxZwJ",
+      "fields": {
+        "isAvailable": {
+          "booleanValue": true
+        },
+        "restaurantName": {
+          "stringValue": "Carlos Gomez"
+        },
+        "restaurantId": {
+          "stringValue": "JazorRsBdlTJmWj2Q5LTcshKa9j1"
+        },
+        "isDonation": {
+          "booleanValue": false
+        },
+        "updatedAt": {
+          "timestampValue": "2026-04-04T05:41:20.822Z"
+        },
+        "name": {
+          "stringValue": "hi"
+        },
+        "rating": {
+          "integerValue": "0"
+        },
+        "createdAt": {
+          "timestampValue": "2026-04-03T20:52:05.387Z"
+        },
+        "quantity": {
+          "integerValue": "100"
+        },
+        "batchId": {
+          "stringValue": "B1775249636046"
+        },
+        "category": {
+          "stringValue": "fast-food"
+        },
+        "description": {
+          "stringValue": ""
+        },
+        "originalPrice": {
+          "integerValue": "100"
+        },
+        "expiryHours": {
+          "integerValue": "25"
+        },
+        "isVeg": {
+          "booleanValue": true
+        },
+        "discountedPrice": {
+          "integerValue": "78"
+        },
+        "expiryTime": {
+          "timestampValue": "2026-04-04T21:53:56.046Z"
+        }
+      },
+      "createTime": "2026-04-03T20:52:05.405513Z",
+      "updateTime": "2026-04-04T05:41:20.830992Z"
+    },
+    {
+      "name": "projects/last-bite-179b2/databases/(default)/documents/foodItems/IpK5mDRiZfipVmqKcZSK",
+      "fields": {
+        "createdAt": {
+          "timestampValue": "2026-04-03T21:24:47.924Z"
+        },
+        "quantity": {
+          "integerValue": "-7"
+        },
+        "batchId": {
+          "stringValue": "B1775251488032"
+        },
+        "isAvailable": {
+          "booleanValue": false
+        },
+        "restaurantName": {
+          "stringValue": "Faozan"
+        },
+        "restaurantId": {
+          "stringValue": "EPA7oPKvoxgWh85y7sY0XnOGN1N2"
+        },
+        "isDonation": {
+          "booleanValue": false
+        },
+        "rating": {
+          "integerValue": "0"
+        },
+        "name": {
+          "stringValue": "Pizza Faozan"
+        },
+        "updatedAt": {
+          "timestampValue": "2026-04-03T22:01:16.137Z"
+        },
+        "isVeg": {
+          "booleanValue": true
+        },
+        "expiryHours": {
+          "integerValue": "27"
+        },
+        "expiryTime": {
+          "timestampValue": "2026-04-05T00:24:48.032Z"
+        },
+        "discountedPrice": {
+          "integerValue": "150"
+        },
+        "category": {
+          "stringValue": "fast-food"
+        },
+        "originalPrice": {
+          "integerValue": "300"
+        },
+        "description": {
+          "stringValue": "good food"
+        }
+      },
+      "createTime": "2026-04-03T21:24:47.960465Z",
+      "updateTime": "2026-04-03T22:01:16.163402Z"
+    },
+    {
+      "name": "projects/last-bite-179b2/databases/(default)/documents/foodItems/KMTUUeeJdqDDLc2Z6uG1",
+      "fields": {
+        "originalPrice": {
+          "integerValue": "679"
+        },
+        "description": {
+          "stringValue": "jk"
+        },
+        "category": {
+          "stringValue": "fast-food"
+        },
+        "discountedPrice": {
+          "integerValue": "100"
+        },
+        "expiryTime": {
+          "timestampValue": "2026-04-04T01:10:50.924Z"
+        },
+        "isVeg": {
+          "booleanValue": true
+        },
+        "expiryHours": {
+          "integerValue": "3"
+        },
+        "name": {
+          "stringValue": "Killo"
+        },
+        "rating": {
+          "integerValue": "0"
+        },
+        "updatedAt": {
+          "timestampValue": "2026-04-04T05:22:42.186Z"
+        },
+        "restaurantId": {
+          "stringValue": "EPA7oPKvoxgWh85y7sY0XnOGN1N2"
+        },
+        "isDonation": {
+          "booleanValue": false
+        },
+        "isAvailable": {
+          "booleanValue": false
+        },
+        "restaurantName": {
+          "stringValue": "Faozan"
+        },
+        "batchId": {
+          "stringValue": "B1775254250924"
+        },
+        "quantity": {
+          "integerValue": "8"
+        },
+        "createdAt": {
+          "timestampValue": "2026-04-03T22:10:50.958Z"
+        }
+      },
+      "createTime": "2026-04-03T22:10:50.974546Z",
+      "updateTime": "2026-04-04T05:22:42.224292Z"
+    },
+    {
+      "name": "projects/last-bite-179b2/databases/(default)/documents/foodItems/TZUEqznnGnnO2ru64E3X",
+      "fields": {
+        "description": {
+          "stringValue": "hihi\n"
+        },
+        "originalPrice": {
+          "integerValue": "123"
+        },
+        "category": {
+          "stringValue": "dessert"
+        },
+        "expiryTime": {
+          "timestampValue": "2026-04-05T02:53:17.304Z"
+        },
+        "discountedPrice": {
+          "integerValue": "62"
+        },
+        "expiryHours": {
+          "integerValue": "30"
+        },
+        "isVeg": {
+          "booleanValue": true
+        },
+        "updatedAt": {
+          "timestampValue": "2026-04-04T05:41:20.901Z"
+        },
+        "rating": {
+          "integerValue": "0"
+        },
+        "name": {
+          "stringValue": "hi"
+        },
+        "restaurantId": {
+          "stringValue": "JazorRsBdlTJmWj2Q5LTcshKa9j1"
+        },
+        "isDonation": {
+          "booleanValue": false
+        },
+        "restaurantName": {
+          "stringValue": "Carlos Gomez"
+        },
+        "isAvailable": {
+          "booleanValue": true
+        },
+        "batchId": {
+          "stringValue": "B1775249597304"
+        },
+        "quantity": {
+          "integerValue": "1"
+        },
+        "createdAt": {
+          "timestampValue": "2026-04-03T20:51:26.627Z"
+        }
+      },
+      "createTime": "2026-04-03T20:51:26.669360Z",
+      "updateTime": "2026-04-04T05:41:20.935907Z"
+    },
+    {
+      "name": "projects/last-bite-179b2/databases/(default)/documents/foodItems/item_101",
+      "fields": {
+        "category": {
+          "stringValue": "indian"
+        },
+        "originalPrice": {
+          "integerValue": "450"
+        },
+        "description": {
+          "stringValue": "Rich and creamy tomato-based curry with tender chicken pieces."
+        },
+        "isVeg": {
+          "booleanValue": false
+        },
+        "expiryHours": {
+          "integerValue": "4"
+        },
+        "discountedPrice": {
+          "integerValue": "399"
+        },
+        "expiryTime": {
+          "timestampValue": "2026-04-05T20:00:00Z"
+        },
+        "restaurantId": {
+          "stringValue": "rest_001"
+        },
+        "isDonation": {
+          "booleanValue": false
+        },
+        "isAvailable": {
+          "booleanValue": true
+        },
+        "restaurantName": {
+          "stringValue": "The Spice Garden"
+        },
+        "image": {
+          "stringValue": "https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?w=400&q=80"
+        },
+        "rating": {
+          "doubleValue": 4.8
+        },
+        "name": {
+          "stringValue": "Butter Chicken"
+        },
+        "updatedAt": {
+          "timestampValue": "2026-04-04T12:00:00Z"
+        },
+        "createdAt": {
+          "timestampValue": "2026-04-04T12:00:00Z"
+        },
+        "distance": {
+          "doubleValue": 2.5
+        },
+        "batchId": {
+          "stringValue": "BATCH_001_BCHICKEN"
+        },
+        "quantity": {
+          "integerValue": "20"
+        },
+        "id": {
+          "stringValue": "item_101"
+        }
+      },
+      "createTime": "2026-04-03T19:48:24.936789Z",
+      "updateTime": "2026-04-03T19:48:24.936789Z"
+    },
+    {
+      "name": "projects/last-bite-179b2/databases/(default)/documents/foodItems/item_102",
+      "fields": {
+        "restaurantName": {
+          "stringValue": "The Spice Garden"
+        },
+        "isAvailable": {
+          "booleanValue": true
+        },
+        "restaurantId": {
+          "stringValue": "rest_001"
+        },
+        "isDonation": {
+          "booleanValue": false
+        },
+        "updatedAt": {
+          "timestampValue": "2026-04-04T12:00:00Z"
+        },
+        "name": {
+          "stringValue": "Garlic Naan"
+        },
+        "rating": {
+          "doubleValue": 4.5
+        },
+        "image": {
+          "stringValue": "https://images.unsplash.com/photo-1626082927389-6cd097cdc6ec?w=400&q=80"
+        },
+        "distance": {
+          "doubleValue": 2.5
+        },
+        "createdAt": {
+          "timestampValue": "2026-04-04T12:00:00Z"
+        },
+        "id": {
+          "stringValue": "item_102"
+        },
+        "quantity": {
+          "integerValue": "50"
+        },
+        "batchId": {
+          "stringValue": "BATCH_001_GNAAN"
+        },
+        "category": {
+          "stringValue": "indian"
+        },
+        "description": {
+          "stringValue": "Soft flatbread baked in a tandoor, topped with garlic and butter."
+        },
+        "originalPrice": {
+          "integerValue": "70"
+        },
+        "expiryHours": {
+          "integerValue": "6"
+        },
+        "isVeg": {
+          "booleanValue": true
+        },
+        "discountedPrice": {
+          "integerValue": "50"
+        },
+        "expiryTime": {
+          "timestampValue": "2026-04-05T22:00:00Z"
+        }
+      },
+      "createTime": "2026-04-03T19:48:24.998703Z",
+      "updateTime": "2026-04-03T19:48:24.998703Z"
+    },
+    {
+      "name": "projects/last-bite-179b2/databases/(default)/documents/foodItems/item_103",
+      "fields": {
+        "originalPrice": {
+          "integerValue": "350"
+        },
+        "description": {
+          "stringValue": "Grilled cottage cheese cubes in a spicy and creamy gravy."
+        },
+        "category": {
+          "stringValue": "indian"
+        },
+        "discountedPrice": {
+          "integerValue": "299"
+        },
+        "expiryTime": {
+          "timestampValue": "2026-04-05T20:00:00Z"
+        },
+        "isVeg": {
+          "booleanValue": true
+        },
+        "expiryHours": {
+          "integerValue": "4"
+        },
+        "name": {
+          "stringValue": "Paneer Tikka Masala"
+        },
+        "rating": {
+          "doubleValue": 4.6
+        },
+        "image": {
+          "stringValue": "https://images.unsplash.com/photo-1565557623262-b51c2513a641?w=400&q=80"
+        },
+        "updatedAt": {
+          "timestampValue": "2026-04-04T12:00:00Z"
+        },
+        "isAvailable": {
+          "booleanValue": true
+        },
+        "restaurantName": {
+          "stringValue": "The Spice Garden"
+        },
+        "isDonation": {
+          "booleanValue": false
+        },
+        "restaurantId": {
+          "stringValue": "rest_001"
+        },
+        "quantity": {
+          "integerValue": "30"
+        },
+        "batchId": {
+          "stringValue": "BATCH_001_PTIKKA"
+        },
+        "id": {
+          "stringValue": "item_103"
+        },
+        "createdAt": {
+          "timestampValue": "2026-04-04T12:00:00Z"
+        },
+        "distance": {
+          "doubleValue": 2.5
+        }
+      },
+      "createTime": "2026-04-03T19:48:25.089179Z",
+      "updateTime": "2026-04-03T19:48:25.089179Z"
+    },
+    {
+      "name": "projects/last-bite-179b2/databases/(default)/documents/foodItems/item_104",
+      "fields": {
+        "createdAt": {
+          "timestampValue": "2026-04-04T12:00:00Z"
+        },
+        "distance": {
+          "doubleValue": 2.5
+        },
+        "batchId": {
+          "stringValue": "BATCH_001_BIRYANI"
+        },
+        "quantity": {
+          "integerValue": "25"
+        },
+        "id": {
+          "stringValue": "item_104"
+        },
+        "isDonation": {
+          "booleanValue": false
+        },
+        "restaurantId": {
+          "stringValue": "rest_001"
+        },
+        "restaurantName": {
+          "stringValue": "The Spice Garden"
+        },
+        "isAvailable": {
+          "booleanValue": true
+        },
+        "image": {
+          "stringValue": "https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?w=400&q=80"
+        },
+        "name": {
+          "stringValue": "Chicken Biryani"
+        },
+        "rating": {
+          "doubleValue": 4.9
+        },
+        "updatedAt": {
+          "timestampValue": "2026-04-04T12:00:00Z"
+        },
+        "isVeg": {
+          "booleanValue": false
+        },
+        "expiryHours": {
+          "integerValue": "5"
+        },
+        "discountedPrice": {
+          "integerValue": "350"
+        },
+        "expiryTime": {
+          "timestampValue": "2026-04-05T21:00:00Z"
+        },
+        "category": {
+          "stringValue": "indian"
+        },
+        "originalPrice": {
+          "integerValue": "400"
+        },
+        "description": {
+          "stringValue": "Aromatic basmati rice cooked with marinated chicken and traditional spices."
+        }
+      },
+      "createTime": "2026-04-03T19:48:25.165993Z",
+      "updateTime": "2026-04-03T19:48:25.165993Z"
+    },
+    {
+      "name": "projects/last-bite-179b2/databases/(default)/documents/foodItems/item_105",
+      "fields": {
+        "createdAt": {
+          "timestampValue": "2026-04-04T12:00:00Z"
+        },
+        "distance": {
+          "doubleValue": 2.5
+        },
+        "quantity": {
+          "integerValue": "40"
+        },
+        "batchId": {
+          "stringValue": "BATCH_001_DAL"
+        },
+        "id": {
+          "stringValue": "item_105"
+        },
+        "restaurantName": {
+          "stringValue": "The Spice Garden"
+        },
+        "isAvailable": {
+          "booleanValue": true
+        },
+        "restaurantId": {
+          "stringValue": "rest_001"
+        },
+        "isDonation": {
+          "booleanValue": false
+        },
+        "rating": {
+          "doubleValue": 4.7
+        },
+        "name": {
+          "stringValue": "Dal Makhani"
+        },
+        "image": {
+          "stringValue": "https://images.unsplash.com/photo-1546833999-b9f581a1996d?w=400&q=80"
+        },
+        "updatedAt": {
+          "timestampValue": "2026-04-04T12:00:00Z"
+        },
+        "isVeg": {
+          "booleanValue": true
+        },
+        "expiryHours": {
+          "integerValue": "4"
+        },
+        "discountedPrice": {
+          "integerValue": "199"
+        },
+        "expiryTime": {
+          "timestampValue": "2026-04-05T20:00:00Z"
+        },
+        "category": {
+          "stringValue": "indian"
+        },
+        "originalPrice": {
+          "integerValue": "250"
+        },
+        "description": {
+          "stringValue": "Slowly cooked black lentils and kidney beans enriched with butter and cream."
+        }
+      },
+      "createTime": "2026-04-03T19:48:25.237305Z",
+      "updateTime": "2026-04-03T19:48:25.237305Z"
+    },
+    {
+      "name": "projects/last-bite-179b2/databases/(default)/documents/foodItems/item_106",
+      "fields": {
+        "restaurantName": {
+          "stringValue": "The Spice Garden"
+        },
+        "isAvailable": {
+          "booleanValue": true
+        },
+        "restaurantId": {
+          "stringValue": "rest_001"
+        },
+        "isDonation": {
+          "booleanValue": false
+        },
+        "rating": {
+          "doubleValue": 4.4
+        },
+        "name": {
+          "stringValue": "Samosa Chaat"
+        },
+        "image": {
+          "stringValue": "https://images.unsplash.com/photo-1626779836376-78703a5fe6c1?w=400&q=80"
+        },
+        "updatedAt": {
+          "timestampValue": "2026-04-04T12:00:00Z"
+        },
+        "createdAt": {
+          "timestampValue": "2026-04-04T12:00:00Z"
+        },
+        "distance": {
+          "doubleValue": 2.5
+        },
+        "quantity": {
+          "integerValue": "15"
+        },
+        "batchId": {
+          "stringValue": "BATCH_001_SAMOSA"
+        },
+        "id": {
+          "stringValue": "item_106"
+        },
+        "category": {
+          "stringValue": "fast-food"
+        },
+        "originalPrice": {
+          "integerValue": "120"
+        },
+        "description": {
+          "stringValue": "Crispy samosas topped with yogurt, chutneys, and spices."
+        },
+        "isVeg": {
+          "booleanValue": true
+        },
+        "expiryHours": {
+          "integerValue": "3"
+        },
+        "discountedPrice": {
+          "integerValue": "99"
+        },
+        "expiryTime": {
+          "timestampValue": "2026-04-05T19:00:00Z"
+        }
+      },
+      "createTime": "2026-04-03T19:48:25.294598Z",
+      "updateTime": "2026-04-03T19:48:25.294598Z"
+    },
+    {
+      "name": "projects/last-bite-179b2/databases/(default)/documents/foodItems/item_107",
+      "fields": {
+        "description": {
+          "stringValue": "Deep-fried milk dough balls soaked in a sweet sugar syrup."
+        },
+        "originalPrice": {
+          "integerValue": "100"
+        },
+        "category": {
+          "stringValue": "dessert"
+        },
+        "discountedPrice": {
+          "integerValue": "80"
+        },
+        "expiryTime": {
+          "timestampValue": "2026-04-06T04:00:00Z"
+        },
+        "expiryHours": {
+          "integerValue": "12"
+        },
+        "isVeg": {
+          "booleanValue": true
+        },
+        "updatedAt": {
+          "timestampValue": "2026-04-04T12:00:00Z"
+        },
+        "rating": {
+          "doubleValue": 4.8
+        },
+        "name": {
+          "stringValue": "Gulab Jamun"
+        },
+        "image": {
+          "stringValue": "https://images.unsplash.com/photo-1582285584501-8e0f6b39bfad?w=400&q=80"
+        },
+        "restaurantName": {
+          "stringValue": "The Spice Garden"
+        },
+        "isAvailable": {
+          "booleanValue": true
+        },
+        "isDonation": {
+          "booleanValue": false
+        },
+        "restaurantId": {
+          "stringValue": "rest_001"
+        },
+        "id": {
+          "stringValue": "item_107"
+        },
+        "quantity": {
+          "integerValue": "60"
+        },
+        "batchId": {
+          "stringValue": "BATCH_001_GJAMUN"
+        },
+        "distance": {
+          "doubleValue": 2.5
+        },
+        "createdAt": {
+          "timestampValue": "2026-04-04T12:00:00Z"
+        }
+      },
+      "createTime": "2026-04-03T19:48:25.354547Z",
+      "updateTime": "2026-04-03T19:48:25.354547Z"
+    },
+    {
+      "name": "projects/last-bite-179b2/databases/(default)/documents/foodItems/item_108",
+      "fields": {
+        "updatedAt": {
+          "timestampValue": "2026-04-04T12:00:00Z"
+        },
+        "name": {
+          "stringValue": "Rasmalai"
+        },
+        "rating": {
+          "doubleValue": 4.7
+        },
+        "image": {
+          "stringValue": "https://images.unsplash.com/photo-1601050690597-df0568f70950?w=400&q=80"
+        },
+        "isAvailable": {
+          "booleanValue": true
+        },
+        "restaurantName": {
+          "stringValue": "The Spice Garden"
+        },
+        "restaurantId": {
+          "stringValue": "rest_001"
+        },
+        "isDonation": {
+          "booleanValue": false
+        },
+        "id": {
+          "stringValue": "item_108"
+        },
+        "quantity": {
+          "integerValue": "30"
+        },
+        "batchId": {
+          "stringValue": "BATCH_001_RASMALAI"
+        },
+        "distance": {
+          "doubleValue": 2.5
+        },
+        "createdAt": {
+          "timestampValue": "2026-04-04T12:00:00Z"
+        },
+        "description": {
+          "stringValue": "Soft paneer discs soaked in chilled creamy milk flavored with cardamom."
+        },
+        "originalPrice": {
+          "integerValue": "140"
+        },
+        "category": {
+          "stringValue": "dessert"
+        },
+        "discountedPrice": {
+          "integerValue": "120"
+        },
+        "expiryTime": {
+          "timestampValue": "2026-04-06T00:00:00Z"
+        },
+        "expiryHours": {
+          "integerValue": "8"
+        },
+        "isVeg": {
+          "booleanValue": true
+        }
+      },
+      "createTime": "2026-04-03T19:48:25.437411Z",
+      "updateTime": "2026-04-03T19:48:25.437411Z"
+    },
+    {
+      "name": "projects/last-bite-179b2/databases/(default)/documents/foodItems/item_109",
+      "fields": {
+        "discountedPrice": {
+          "integerValue": "30"
+        },
+        "expiryTime": {
+          "timestampValue": "2026-04-05T22:00:00Z"
+        },
+        "isVeg": {
+          "booleanValue": true
+        },
+        "expiryHours": {
+          "integerValue": "6"
+        },
+        "originalPrice": {
+          "integerValue": "40"
+        },
+        "description": {
+          "stringValue": "Traditional whole wheat bread baked in a clay oven."
+        },
+        "category": {
+          "stringValue": "indian"
+        },
+        "quantity": {
+          "integerValue": "100"
+        },
+        "batchId": {
+          "stringValue": "BATCH_001_ROTI"
+        },
+        "id": {
+          "stringValue": "item_109"
+        },
+        "createdAt": {
+          "timestampValue": "2026-04-04T12:00:00Z"
+        },
+        "distance": {
+          "doubleValue": 2.5
+        },
+        "name": {
+          "stringValue": "Tandoori Roti"
+        },
+        "rating": {
+          "doubleValue": 4.2
+        },
+        "image": {
+          "stringValue": "https://images.unsplash.com/photo-1627308595229-7830f5c91f9f?w=400&q=80"
+        },
+        "updatedAt": {
+          "timestampValue": "2026-04-04T12:00:00Z"
+        },
+        "restaurantName": {
+          "stringValue": "The Spice Garden"
+        },
+        "isAvailable": {
+          "booleanValue": true
+        },
+        "restaurantId": {
+          "stringValue": "rest_001"
+        },
+        "isDonation": {
+          "booleanValue": false
+        }
+      },
+      "createTime": "2026-04-03T19:48:25.499413Z",
+      "updateTime": "2026-04-03T19:48:25.499413Z"
+    },
+    {
+      "name": "projects/last-bite-179b2/databases/(default)/documents/foodItems/item_110",
+      "fields": {
+        "category": {
+          "stringValue": "indian"
+        },
+        "originalPrice": {
+          "integerValue": "220"
+        },
+        "description": {
+          "stringValue": "Fragrant rice dish cooked with mixed vegetables and mild spices."
+        },
+        "isVeg": {
+          "booleanValue": true
+        },
+        "expiryHours": {
+          "integerValue": "5"
+        },
+        "discountedPrice": {
+          "integerValue": "180"
+        },
+        "expiryTime": {
+          "timestampValue": "2026-04-05T21:00:00Z"
+        },
+        "isAvailable": {
+          "booleanValue": true
+        },
+        "restaurantName": {
+          "stringValue": "The Spice Garden"
+        },
+        "restaurantId": {
+          "stringValue": "rest_001"
+        },
+        "isDonation": {
+          "booleanValue": true
+        },
+        "name": {
+          "stringValue": "Vegetable Pulao"
+        },
+        "rating": {
+          "doubleValue": 4.3
+        },
+        "image": {
+          "stringValue": "https://images.unsplash.com/photo-1615486171448-4fd9b1cd41c2?w=400&q=80"
+        },
+        "updatedAt": {
+          "timestampValue": "2026-04-04T12:00:00Z"
+        },
+        "createdAt": {
+          "timestampValue": "2026-04-04T12:00:00Z"
+        },
+        "distance": {
+          "doubleValue": 2.5
+        },
+        "quantity": {
+          "integerValue": "25"
+        },
+        "batchId": {
+          "stringValue": "BATCH_001_PULAO"
+        },
+        "id": {
+          "stringValue": "item_110"
+        }
+      },
+      "createTime": "2026-04-03T19:48:25.557979Z",
+      "updateTime": "2026-04-03T19:48:25.557979Z"
+    },
+    {
+      "name": "projects/last-bite-179b2/databases/(default)/documents/foodItems/item_201",
+      "fields": {
+        "category": {
+          "stringValue": "fast-food"
+        },
+        "description": {
+          "stringValue": "Hard shell taco loaded with seasoned ground beef, cheese, lettuce, and salsa."
+        },
+        "originalPrice": {
+          "integerValue": "150"
+        },
+        "expiryHours": {
+          "integerValue": "2"
+        },
+        "isVeg": {
+          "booleanValue": false
+        },
+        "discountedPrice": {
+          "integerValue": "130"
+        },
+        "expiryTime": {
+          "timestampValue": "2026-04-05T18:00:00Z"
+        },
+        "restaurantName": {
+          "stringValue": "Taco Fiesta"
+        },
+        "isAvailable": {
+          "booleanValue": true
+        },
+        "isDonation": {
+          "booleanValue": false
+        },
+        "restaurantId": {
+          "stringValue": "rest_002"
+        },
+        "updatedAt": {
+          "timestampValue": "2026-04-04T12:00:00Z"
+        },
+        "rating": {
+          "doubleValue": 4.5
+        },
+        "name": {
+          "stringValue": "Classic Beef Taco"
+        },
+        "image": {
+          "stringValue": "https://images.unsplash.com/photo-1551504734-5ee1c4a1479b?w=400&q=80"
+        },
+        "distance": {
+          "doubleValue": 4.1
+        },
+        "createdAt": {
+          "timestampValue": "2026-04-04T12:00:00Z"
+        },
+        "id": {
+          "stringValue": "item_201"
+        },
+        "quantity": {
+          "integerValue": "40"
+        },
+        "batchId": {
+          "stringValue": "BATCH_002_BTACO"
+        }
+      },
+      "createTime": "2026-04-03T19:48:25.625208Z",
+      "updateTime": "2026-04-03T19:48:25.625208Z"
+    },
+    {
+      "name": "projects/last-bite-179b2/databases/(default)/documents/foodItems/item_202",
+      "fields": {
+        "isVeg": {
+          "booleanValue": false
+        },
+        "expiryHours": {
+          "integerValue": "3"
+        },
+        "discountedPrice": {
+          "integerValue": "190"
+        },
+        "expiryTime": {
+          "timestampValue": "2026-04-05T19:00:00Z"
+        },
+        "category": {
+          "stringValue": "fast-food"
+        },
+        "originalPrice": {
+          "integerValue": "220"
+        },
+        "description": {
+          "stringValue": "Grilled tortilla filled with melted cheese and seasoned chicken."
+        },
+        "createdAt": {
+          "timestampValue": "2026-04-04T12:00:00Z"
+        },
+        "distance": {
+          "doubleValue": 4.1
+        },
+        "batchId": {
+          "stringValue": "BATCH_002_QUESADILLA"
+        },
+        "quantity": {
+          "integerValue": "25"
+        },
+        "id": {
+          "stringValue": "item_202"
+        },
+        "restaurantId": {
+          "stringValue": "rest_002"
+        },
+        "isDonation": {
+          "booleanValue": false
+        },
+        "restaurantName": {
+          "stringValue": "Taco Fiesta"
+        },
+        "isAvailable": {
+          "booleanValue": true
+        },
+        "image": {
+          "stringValue": "https://images.unsplash.com/photo-1618040608552-87063d3fb67a?w=400&q=80"
+        },
+        "rating": {
+          "doubleValue": 4.7
+        },
+        "name": {
+          "stringValue": "Chicken Quesadilla"
+        },
+        "updatedAt": {
+          "timestampValue": "2026-04-04T12:00:00Z"
+        }
+      },
+      "createTime": "2026-04-03T19:48:25.707471Z",
+      "updateTime": "2026-04-03T19:48:25.707471Z"
+    },
+    {
+      "name": "projects/last-bite-179b2/databases/(default)/documents/foodItems/item_203",
+      "fields": {
+        "discountedPrice": {
+          "integerValue": "210"
+        },
+        "expiryTime": {
+          "timestampValue": "2026-04-05T20:00:00Z"
+        },
+        "isVeg": {
+          "booleanValue": false
+        },
+        "expiryHours": {
+          "integerValue": "4"
+        },
+        "originalPrice": {
+          "integerValue": "250"
+        },
+        "description": {
+          "stringValue": "Large burrito stuffed with beans, rice, spicy salsa, and choice of meat."
+        },
+        "category": {
+          "stringValue": "fast-food"
+        },
+        "batchId": {
+          "stringValue": "BATCH_002_BURRITO"
+        },
+        "quantity": {
+          "integerValue": "35"
+        },
+        "id": {
+          "stringValue": "item_203"
+        },
+        "createdAt": {
+          "timestampValue": "2026-04-04T12:00:00Z"
+        },
+        "distance": {
+          "doubleValue": 4.1
+        },
+        "image": {
+          "stringValue": "https://images.unsplash.com/photo-1626700051175-6818013e1d4f?w=400&q=80"
+        },
+        "name": {
+          "stringValue": "Spicy Burrito"
+        },
+        "rating": {
+          "doubleValue": 4.6
+        },
+        "updatedAt": {
+          "timestampValue": "2026-04-04T12:00:00Z"
+        },
+        "restaurantId": {
+          "stringValue": "rest_002"
+        },
+        "isDonation": {
+          "booleanValue": false
+        },
+        "isAvailable": {
+          "booleanValue": true
+        },
+        "restaurantName": {
+          "stringValue": "Taco Fiesta"
+        }
+      },
+      "createTime": "2026-04-03T19:48:25.818480Z",
+      "updateTime": "2026-04-03T19:48:25.818480Z"
+    },
+    {
+      "name": "projects/last-bite-179b2/databases/(default)/documents/foodItems/item_204",
+      "fields": {
+        "discountedPrice": {
+          "integerValue": "160"
+        },
+        "expiryTime": {
+          "timestampValue": "2026-04-05T18:00:00Z"
+        },
+        "expiryHours": {
+          "integerValue": "2"
+        },
+        "isVeg": {
+          "booleanValue": true
+        },
+        "description": {
+          "stringValue": "Tortilla chips topped with nacho cheese, jalapeños, beans, and sour cream."
+        },
+        "originalPrice": {
+          "integerValue": "180"
+        },
+        "category": {
+          "stringValue": "fast-food"
+        },
+        "id": {
+          "stringValue": "item_204"
+        },
+        "quantity": {
+          "integerValue": "30"
+        },
+        "batchId": {
+          "stringValue": "BATCH_002_NACHOS"
+        },
+        "distance": {
+          "doubleValue": 4.1
+        },
+        "createdAt": {
+          "timestampValue": "2026-04-04T12:00:00Z"
+        },
+        "updatedAt": {
+          "timestampValue": "2026-04-04T12:00:00Z"
+        },
+        "name": {
+          "stringValue": "Nachos Supreme"
+        },
+        "rating": {
+          "doubleValue": 4.4
+        },
+        "image": {
+          "stringValue": "https://images.unsplash.com/photo-1513456852971-30c0b8199d4d?w=400&q=80"
+        },
+        "isAvailable": {
+          "booleanValue": true
+        },
+        "restaurantName": {
+          "stringValue": "Taco Fiesta"
+        },
+        "restaurantId": {
+          "stringValue": "rest_002"
+        },
+        "isDonation": {
+          "booleanValue": false
+        }
+      },
+      "createTime": "2026-04-03T19:48:25.885455Z",
+      "updateTime": "2026-04-03T19:48:25.885455Z"
+    },
+    {
+      "name": "projects/last-bite-179b2/databases/(default)/documents/foodItems/item_205",
+      "fields": {
+        "category": {
+          "stringValue": "healthy"
+        },
+        "description": {
+          "stringValue": "Freshly mashed avocados with lime, cilantro, onions, served with chips."
+        },
+        "originalPrice": {
+          "integerValue": "160"
+        },
+        "expiryHours": {
+          "integerValue": "3"
+        },
+        "isVeg": {
+          "booleanValue": true
+        },
+        "discountedPrice": {
+          "integerValue": "140"
+        },
+        "expiryTime": {
+          "timestampValue": "2026-04-05T19:00:00Z"
+        },
+        "isAvailable": {
+          "booleanValue": true
+        },
+        "restaurantName": {
+          "stringValue": "Taco Fiesta"
+        },
+        "restaurantId": {
+          "stringValue": "rest_002"
+        },
+        "isDonation": {
+          "booleanValue": false
+        },
+        "updatedAt": {
+          "timestampValue": "2026-04-04T12:00:00Z"
+        },
+        "name": {
+          "stringValue": "Guacamole & Chips"
+        },
+        "rating": {
+          "doubleValue": 4.8
+        },
+        "image": {
+          "stringValue": "https://images.unsplash.com/photo-1604152060670-49ad88dcb4c1?w=400&q=80"
+        },
+        "distance": {
+          "doubleValue": 4.1
+        },
+        "createdAt": {
+          "timestampValue": "2026-04-04T12:00:00Z"
+        },
+        "id": {
+          "stringValue": "item_205"
+        },
+        "quantity": {
+          "integerValue": "25"
+        },
+        "batchId": {
+          "stringValue": "BATCH_002_GUAC"
+        }
+      },
+      "createTime": "2026-04-03T19:48:25.950768Z",
+      "updateTime": "2026-04-03T19:48:25.950768Z"
+    },
+    {
+      "name": "projects/last-bite-179b2/databases/(default)/documents/foodItems/item_206",
+      "fields": {
+        "image": {
+          "stringValue": "https://images.unsplash.com/photo-1624371414361-0d31df250284?w=400&q=80"
+        },
+        "name": {
+          "stringValue": "Churros"
+        },
+        "rating": {
+          "doubleValue": 4.7
+        },
+        "updatedAt": {
+          "timestampValue": "2026-04-04T12:00:00Z"
+        },
+        "restaurantId": {
+          "stringValue": "rest_002"
+        },
+        "isDonation": {
+          "booleanValue": false
+        },
+        "restaurantName": {
+          "stringValue": "Taco Fiesta"
+        },
+        "isAvailable": {
+          "booleanValue": true
+        },
+        "batchId": {
+          "stringValue": "BATCH_002_CHURROS"
+        },
+        "quantity": {
+          "integerValue": "20"
+        },
+        "id": {
+          "stringValue": "item_206"
+        },
+        "createdAt": {
+          "timestampValue": "2026-04-04T12:00:00Z"
+        },
+        "distance": {
+          "doubleValue": 4.1
+        },
+        "originalPrice": {
+          "integerValue": "120"
+        },
+        "description": {
+          "stringValue": "Fried dough pastries sprinkled with cinnamon sugar and chocolate dip."
+        },
+        "category": {
+          "stringValue": "dessert"
+        },
+        "expiryTime": {
+          "timestampValue": "2026-04-05T20:00:00Z"
+        },
+        "discountedPrice": {
+          "integerValue": "100"
+        },
+        "isVeg": {
+          "booleanValue": true
+        },
+        "expiryHours": {
+          "integerValue": "4"
+        }
+      },
+      "createTime": "2026-04-03T19:48:26.129557Z",
+      "updateTime": "2026-04-03T19:48:26.129557Z"
+    },
+    {
+      "name": "projects/last-bite-179b2/databases/(default)/documents/foodItems/item_207",
+      "fields": {
+        "expiryHours": {
+          "integerValue": "2"
+        },
+        "isVeg": {
+          "booleanValue": false
+        },
+        "discountedPrice": {
+          "integerValue": "170"
+        },
+        "expiryTime": {
+          "timestampValue": "2026-04-05T18:00:00Z"
+        },
+        "category": {
+          "stringValue": "fast-food"
+        },
+        "description": {
+          "stringValue": "Soft tortilla filled with crispy battered fish, tangy slaw, and chipotle mayo."
+        },
+        "originalPrice": {
+          "integerValue": "190"
+        },
+        "distance": {
+          "doubleValue": 4.1
+        },
+        "createdAt": {
+          "timestampValue": "2026-04-04T12:00:00Z"
+        },
+        "id": {
+          "stringValue": "item_207"
+        },
+        "batchId": {
+          "stringValue": "BATCH_002_FTACO"
+        },
+        "quantity": {
+          "integerValue": "15"
+        },
+        "restaurantId": {
+          "stringValue": "rest_002"
+        },
+        "isDonation": {
+          "booleanValue": false
+        },
+        "restaurantName": {
+          "stringValue": "Taco Fiesta"
+        },
+        "isAvailable": {
+          "booleanValue": true
+        },
+        "updatedAt": {
+          "timestampValue": "2026-04-04T12:00:00Z"
+        },
+        "image": {
+          "stringValue": "https://images.unsplash.com/photo-1549488344-c71b12b5bc7b?w=400&q=80"
+        },
+        "name": {
+          "stringValue": "Fish Taco"
+        },
+        "rating": {
+          "doubleValue": 4.6
+        }
+      },
+      "createTime": "2026-04-03T19:48:26.191894Z",
+      "updateTime": "2026-04-03T19:48:26.191894Z"
+    },
+    {
+      "name": "projects/last-bite-179b2/databases/(default)/documents/foodItems/item_208",
+      "fields": {
+        "discountedPrice": {
+          "integerValue": "90"
+        },
+        "expiryTime": {
+          "timestampValue": "2026-04-05T21:00:00Z"
+        },
+        "expiryHours": {
+          "integerValue": "5"
+        },
+        "isVeg": {
+          "booleanValue": true
+        },
+        "description": {
+          "stringValue": "Flavorful rice cooked with tomatoes, garlic, onions, and delicate spices."
+        },
+        "originalPrice": {
+          "integerValue": "110"
+        },
+        "category": {
+          "stringValue": "other"
+        },
+        "id": {
+          "stringValue": "item_208"
+        },
+        "quantity": {
+          "integerValue": "30"
+        },
+        "batchId": {
+          "stringValue": "BATCH_002_MRICE"
+        },
+        "distance": {
+          "doubleValue": 4.1
+        },
+        "createdAt": {
+          "timestampValue": "2026-04-04T12:00:00Z"
+        },
+        "updatedAt": {
+          "timestampValue": "2026-04-04T12:00:00Z"
+        },
+        "name": {
+          "stringValue": "Mexican Rice"
+        },
+        "rating": {
+          "doubleValue": 4.3
+        },
+        "image": {
+          "stringValue": "https://images.unsplash.com/photo-1512058564366-18510be2db19?w=400&q=80"
+        },
+        "restaurantName": {
+          "stringValue": "Taco Fiesta"
+        },
+        "isAvailable": {
+          "booleanValue": true
+        },
+        "isDonation": {
+          "booleanValue": false
+        },
+        "restaurantId": {
+          "stringValue": "rest_002"
+        }
+      },
+      "createTime": "2026-04-03T19:48:26.254396Z",
+      "updateTime": "2026-04-03T19:48:26.254396Z"
+    },
+    {
+      "name": "projects/last-bite-179b2/databases/(default)/documents/foodItems/item_209",
+      "fields": {
+        "discountedPrice": {
+          "integerValue": "190"
+        },
+        "expiryTime": {
+          "timestampValue": "2026-04-05T19:00:00Z"
+        },
+        "isVeg": {
+          "booleanValue": false
+        },
+        "expiryHours": {
+          "integerValue": "3"
+        },
+        "originalPrice": {
+          "integerValue": "220"
+        },
+        "description": {
+          "stringValue": "Crisp greens topped with taco seasoned beef, cheese, beans, and salsa in a tortilla bowl."
+        },
+        "category": {
+          "stringValue": "healthy"
+        },
+        "quantity": {
+          "integerValue": "10"
+        },
+        "batchId": {
+          "stringValue": "BATCH_002_TSALAD"
+        },
+        "id": {
+          "stringValue": "item_209"
+        },
+        "createdAt": {
+          "timestampValue": "2026-04-04T12:00:00Z"
+        },
+        "distance": {
+          "doubleValue": 4.1
+        },
+        "name": {
+          "stringValue": "Taco Salad"
+        },
+        "rating": {
+          "doubleValue": 4.5
+        },
+        "image": {
+          "stringValue": "https://images.unsplash.com/photo-1547496502-affa22d38842?w=400&q=80"
+        },
+        "updatedAt": {
+          "timestampValue": "2026-04-04T12:00:00Z"
+        },
+        "isAvailable": {
+          "booleanValue": true
+        },
+        "restaurantName": {
+          "stringValue": "Taco Fiesta"
+        },
+        "isDonation": {
+          "booleanValue": false
+        },
+        "restaurantId": {
+          "stringValue": "rest_002"
+        }
+      },
+      "createTime": "2026-04-03T19:48:26.340509Z",
+      "updateTime": "2026-04-03T19:48:26.340509Z"
+    },
+    {
+      "name": "projects/last-bite-179b2/databases/(default)/documents/foodItems/item_210",
+      "fields": {
+        "createdAt": {
+          "timestampValue": "2026-04-04T12:00:00Z"
+        },
+        "distance": {
+          "doubleValue": 4.1
+        },
+        "batchId": {
+          "stringValue": "BATCH_002_BSOUP"
+        },
+        "quantity": {
+          "integerValue": "15"
+        },
+        "id": {
+          "stringValue": "item_210"
+        },
+        "restaurantId": {
+          "stringValue": "rest_002"
+        },
+        "isDonation": {
+          "booleanValue": true
+        },
+        "restaurantName": {
+          "stringValue": "Taco Fiesta"
+        },
+        "isAvailable": {
+          "booleanValue": true
+        },
+        "image": {
+          "stringValue": "https://images.unsplash.com/photo-1547592180-85f173990554?w=400&q=80"
+        },
+        "name": {
+          "stringValue": "Black Bean Soup"
+        },
+        "rating": {
+          "doubleValue": 4.4
+        },
+        "updatedAt": {
+          "timestampValue": "2026-04-04T12:00:00Z"
+        },
+        "isVeg": {
+          "booleanValue": true
+        },
+        "expiryHours": {
+          "integerValue": "6"
+        },
+        "expiryTime": {
+          "timestampValue": "2026-04-05T22:00:00Z"
+        },
+        "discountedPrice": {
+          "integerValue": "110"
+        },
+        "category": {
+          "stringValue": "healthy"
+        },
+        "originalPrice": {
+          "integerValue": "140"
+        },
+        "description": {
+          "stringValue": "Hearty and warming black bean soup with Mexican seasonings."
+        }
+      },
+      "createTime": "2026-04-03T19:48:26.448655Z",
+      "updateTime": "2026-04-03T19:48:26.448655Z"
+    },
+    {
+      "name": "projects/last-bite-179b2/databases/(default)/documents/foodItems/item_301",
+      "fields": {
+        "discountedPrice": {
+          "integerValue": "250"
+        },
+        "expiryTime": {
+          "timestampValue": "2026-04-05T19:00:00Z"
+        },
+        "expiryHours": {
+          "integerValue": "3"
+        },
+        "isVeg": {
+          "booleanValue": true
+        },
+        "description": {
+          "stringValue": "Nutrient-packed quinoa mixed with fresh veggies, avocado, and a lemon vinaigrette."
+        },
+        "originalPrice": {
+          "integerValue": "280"
+        },
+        "category": {
+          "stringValue": "healthy"
+        },
+        "id": {
+          "stringValue": "item_301"
+        },
+        "batchId": {
+          "stringValue": "BATCH_003_QSALAD"
+        },
+        "quantity": {
+          "integerValue": "15"
+        },
+        "distance": {
+          "doubleValue": 3.2
+        },
+        "createdAt": {
+          "timestampValue": "2026-04-04T12:00:00Z"
+        },
+        "updatedAt": {
+          "timestampValue": "2026-04-04T12:00:00Z"
+        },
+        "image": {
+          "stringValue": "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=400&q=80"
+        },
+        "rating": {
+          "doubleValue": 4.9
+        },
+        "name": {
+          "stringValue": "Quinoa Salad Bowl"
+        },
+        "restaurantId": {
+          "stringValue": "rest_003"
+        },
+        "isDonation": {
+          "booleanValue": false
+        },
+        "restaurantName": {
+          "stringValue": "Vegan Delights"
+        },
+        "isAvailable": {
+          "booleanValue": true
+        }
+      },
+      "createTime": "2026-04-03T19:48:26.509482Z",
+      "updateTime": "2026-04-03T19:48:26.509482Z"
+    },
+    {
+      "name": "projects/last-bite-179b2/databases/(default)/documents/foodItems/item_302",
+      "fields": {
+        "discountedPrice": {
+          "integerValue": "299"
+        },
+        "expiryTime": {
+          "timestampValue": "2026-04-05T20:00:00Z"
+        },
+        "expiryHours": {
+          "integerValue": "4"
+        },
+        "isVeg": {
+          "booleanValue": true
+        },
+        "description": {
+          "stringValue": "Plant-based patty with fresh lettuce, tomatoes, and vegan mayo on a whole wheat bun."
+        },
+        "originalPrice": {
+          "integerValue": "320"
+        },
+        "category": {
+          "stringValue": "fast-food"
+        },
+        "id": {
+          "stringValue": "item_302"
+        },
+        "quantity": {
+          "integerValue": "25"
+        },
+        "batchId": {
+          "stringValue": "BATCH_003_VBURGER"
+        },
+        "distance": {
+          "doubleValue": 3.2
+        },
+        "createdAt": {
+          "timestampValue": "2026-04-04T12:00:00Z"
+        },
+        "updatedAt": {
+          "timestampValue": "2026-04-04T12:00:00Z"
+        },
+        "name": {
+          "stringValue": "Vegan Burger"
+        },
+        "rating": {
+          "doubleValue": 4.8
+        },
+        "image": {
+          "stringValue": "https://images.unsplash.com/photo-1520072959219-c595dc870360?w=400&q=80"
+        },
+        "isAvailable": {
+          "booleanValue": true
+        },
+        "restaurantName": {
+          "stringValue": "Vegan Delights"
+        },
+        "restaurantId": {
+          "stringValue": "rest_003"
+        },
+        "isDonation": {
+          "booleanValue": false
+        }
+      },
+      "createTime": "2026-04-03T19:48:26.586060Z",
+      "updateTime": "2026-04-03T19:48:26.586060Z"
+    },
+    {
+      "name": "projects/last-bite-179b2/databases/(default)/documents/foodItems/item_303",
+      "fields": {
+        "isDonation": {
+          "booleanValue": false
+        },
+        "restaurantId": {
+          "stringValue": "rest_003"
+        },
+        "restaurantName": {
+          "stringValue": "Vegan Delights"
+        },
+        "isAvailable": {
+          "booleanValue": true
+        },
+        "image": {
+          "stringValue": "https://images.unsplash.com/photo-1546069901-ba6d30d6bf43?w=400&q=80"
+        },
+        "name": {
+          "stringValue": "Tofu Scramble"
+        },
+        "rating": {
+          "doubleValue": 4.6
+        },
+        "updatedAt": {
+          "timestampValue": "2026-04-04T12:00:00Z"
+        },
+        "createdAt": {
+          "timestampValue": "2026-04-04T12:00:00Z"
+        },
+        "distance": {
+          "doubleValue": 3.2
+        },
+        "batchId": {
+          "stringValue": "BATCH_003_TOFU"
+        },
+        "quantity": {
+          "integerValue": "20"
+        },
+        "id": {
+          "stringValue": "item_303"
+        },
+        "category": {
+          "stringValue": "healthy"
+        },
+        "originalPrice": {
+          "integerValue": "200"
+        },
+        "description": {
+          "stringValue": "High-protein scrambled tofu with turmeric, spinach, and bell peppers."
+        },
+        "isVeg": {
+          "booleanValue": true
+        },
+        "expiryHours": {
+          "integerValue": "4"
+        },
+        "discountedPrice": {
+          "integerValue": "170"
+        },
+        "expiryTime": {
+          "timestampValue": "2026-04-05T20:00:00Z"
+        }
+      },
+      "createTime": "2026-04-03T19:48:26.788196Z",
+      "updateTime": "2026-04-03T19:48:26.788196Z"
+    },
+    {
+      "name": "projects/last-bite-179b2/databases/(default)/documents/foodItems/item_304",
+      "fields": {
+        "createdAt": {
+          "timestampValue": "2026-04-04T12:00:00Z"
+        },
+        "distance": {
+          "doubleValue": 3.2
+        },
+        "quantity": {
+          "integerValue": "30"
+        },
+        "batchId": {
+          "stringValue": "BATCH_003_SMOOTHIE"
+        },
+        "id": {
+          "stringValue": "item_304"
+        },
+        "restaurantName": {
+          "stringValue": "Vegan Delights"
+        },
+        "isAvailable": {
+          "booleanValue": true
+        },
+        "isDonation": {
+          "booleanValue": false
+        },
+        "restaurantId": {
+          "stringValue": "rest_003"
+        },
+        "rating": {
+          "doubleValue": 4.7
+        },
+        "name": {
+          "stringValue": "Green Energy Smoothie"
+        },
+        "image": {
+          "stringValue": "https://images.unsplash.com/photo-1610970881699-44a5587ce574?w=400&q=80"
+        },
+        "updatedAt": {
+          "timestampValue": "2026-04-04T12:00:00Z"
+        },
+        "isVeg": {
+          "booleanValue": true
+        },
+        "expiryHours": {
+          "integerValue": "2"
+        },
+        "discountedPrice": {
+          "integerValue": "150"
+        },
+        "expiryTime": {
+          "timestampValue": "2026-04-05T18:00:00Z"
+        },
+        "category": {
+          "stringValue": "healthy"
+        },
+        "originalPrice": {
+          "integerValue": "180"
+        },
+        "description": {
+          "stringValue": "A refreshing blend of spinach, kale, apple, and ginger."
+        }
+      },
+      "createTime": "2026-04-03T19:48:26.875479Z",
+      "updateTime": "2026-04-03T19:48:26.875479Z"
+    },
+    {
+      "name": "projects/last-bite-179b2/databases/(default)/documents/foodItems/item_305",
+      "fields": {
+        "discountedPrice": {
+          "integerValue": "230"
+        },
+        "expiryTime": {
+          "timestampValue": "2026-04-05T19:00:00Z"
+        },
+        "expiryHours": {
+          "integerValue": "3"
+        },
+        "isVeg": {
+          "booleanValue": true
+        },
+        "description": {
+          "stringValue": "Spiralized zucchini pasta tossed in a rich vegan pesto sauce."
+        },
+        "originalPrice": {
+          "integerValue": "260"
+        },
+        "category": {
+          "stringValue": "healthy"
+        },
+        "id": {
+          "stringValue": "item_305"
+        },
+        "batchId": {
+          "stringValue": "BATCH_003_ZNOODS"
+        },
+        "quantity": {
+          "integerValue": "12"
+        },
+        "distance": {
+          "doubleValue": 3.2
+        },
+        "createdAt": {
+          "timestampValue": "2026-04-04T12:00:00Z"
+        },
+        "updatedAt": {
+          "timestampValue": "2026-04-04T12:00:00Z"
+        },
+        "image": {
+          "stringValue": "https://images.unsplash.com/photo-1543362141-8bf79a4ab0f7?w=400&q=80"
+        },
+        "rating": {
+          "doubleValue": 4.8
+        },
+        "name": {
+          "stringValue": "Zucchini Noodles"
+        },
+        "restaurantId": {
+          "stringValue": "rest_003"
+        },
+        "isDonation": {
+          "booleanValue": false
+        },
+        "isAvailable": {
+          "booleanValue": true
+        },
+        "restaurantName": {
+          "stringValue": "Vegan Delights"
+        }
+      },
+      "createTime": "2026-04-03T19:48:26.941654Z",
+      "updateTime": "2026-04-03T19:48:26.941654Z"
+    },
+    {
+      "name": "projects/last-bite-179b2/databases/(default)/documents/foodItems/item_306",
+      "fields": {
+        "isVeg": {
+          "booleanValue": true
+        },
+        "expiryHours": {
+          "integerValue": "7"
+        },
+        "discountedPrice": {
+          "integerValue": "130"
+        },
+        "expiryTime": {
+          "timestampValue": "2026-04-05T23:00:00Z"
+        },
+        "category": {
+          "stringValue": "dessert"
+        },
+        "originalPrice": {
+          "integerValue": "150"
+        },
+        "description": {
+          "stringValue": "Decadent dark chocolate brownie made without dairy or eggs."
+        },
+        "createdAt": {
+          "timestampValue": "2026-04-04T12:00:00Z"
+        },
+        "distance": {
+          "doubleValue": 3.2
+        },
+        "batchId": {
+          "stringValue": "BATCH_003_BROWNIE"
+        },
+        "quantity": {
+          "integerValue": "40"
+        },
+        "id": {
+          "stringValue": "item_306"
+        },
+        "isDonation": {
+          "booleanValue": false
+        },
+        "restaurantId": {
+          "stringValue": "rest_003"
+        },
+        "isAvailable": {
+          "booleanValue": true
+        },
+        "restaurantName": {
+          "stringValue": "Vegan Delights"
+        },
+        "image": {
+          "stringValue": "https://images.unsplash.com/photo-1606313564200-e75d5e30476c?w=400&q=80"
+        },
+        "name": {
+          "stringValue": "Vegan Brownie"
+        },
+        "rating": {
+          "doubleValue": 4.9
+        },
+        "updatedAt": {
+          "timestampValue": "2026-04-04T12:00:00Z"
+        }
+      },
+      "createTime": "2026-04-03T19:48:27.084421Z",
+      "updateTime": "2026-04-03T19:48:27.084421Z"
+    },
+    {
+      "name": "projects/last-bite-179b2/databases/(default)/documents/foodItems/item_307",
+      "fields": {
+        "id": {
+          "stringValue": "item_307"
+        },
+        "quantity": {
+          "integerValue": "18"
+        },
+        "batchId": {
+          "stringValue": "BATCH_003_ACAI"
+        },
+        "distance": {
+          "doubleValue": 3.2
+        },
+        "createdAt": {
+          "timestampValue": "2026-04-04T12:00:00Z"
+        },
+        "updatedAt": {
+          "timestampValue": "2026-04-04T12:00:00Z"
+        },
+        "name": {
+          "stringValue": "Acai Bowl"
+        },
+        "rating": {
+          "doubleValue": 4.8
+        },
+        "image": {
+          "stringValue": "https://images.unsplash.com/photo-1590165482129-1b8b27698780?w=400&q=80"
+        },
+        "restaurantName": {
+          "stringValue": "Vegan Delights"
+        },
+        "isAvailable": {
+          "booleanValue": true
+        },
+        "restaurantId": {
+          "stringValue": "rest_003"
+        },
+        "isDonation": {
+          "booleanValue": false
+        },
+        "expiryTime": {
+          "timestampValue": "2026-04-05T18:00:00Z"
+        },
+        "discountedPrice": {
+          "integerValue": "240"
+        },
+        "expiryHours": {
+          "integerValue": "2"
+        },
+        "isVeg": {
+          "booleanValue": true
+        },
+        "description": {
+          "stringValue": "Blended acai berries topped with granola, coconut flakes, and fresh fruit."
+        },
+        "originalPrice": {
+          "integerValue": "280"
+        },
+        "category": {
+          "stringValue": "healthy"
+        }
+      },
+      "createTime": "2026-04-03T19:48:27.146518Z",
+      "updateTime": "2026-04-03T19:48:27.146518Z"
+    },
+    {
+      "name": "projects/last-bite-179b2/databases/(default)/documents/foodItems/item_308",
+      "fields": {
+        "isVeg": {
+          "booleanValue": true
+        },
+        "expiryHours": {
+          "integerValue": "4"
+        },
+        "discountedPrice": {
+          "integerValue": "210"
+        },
+        "expiryTime": {
+          "timestampValue": "2026-04-05T20:00:00Z"
+        },
+        "category": {
+          "stringValue": "healthy"
+        },
+        "originalPrice": {
+          "integerValue": "240"
+        },
+        "description": {
+          "stringValue": "Roasted bell peppers filled with spiced quinoa, black beans, and corn."
+        },
+        "createdAt": {
+          "timestampValue": "2026-04-04T12:00:00Z"
+        },
+        "distance": {
+          "doubleValue": 3.2
+        },
+        "quantity": {
+          "integerValue": "10"
+        },
+        "batchId": {
+          "stringValue": "BATCH_003_PEPPERS"
+        },
+        "id": {
+          "stringValue": "item_308"
+        },
+        "isAvailable": {
+          "booleanValue": true
+        },
+        "restaurantName": {
+          "stringValue": "Vegan Delights"
+        },
+        "restaurantId": {
+          "stringValue": "rest_003"
+        },
+        "isDonation": {
+          "booleanValue": false
+        },
+        "name": {
+          "stringValue": "Stuffed Bell Peppers"
+        },
+        "rating": {
+          "doubleValue": 4.7
+        },
+        "image": {
+          "stringValue": "https://images.unsplash.com/photo-1577038167664-dcb99479b183?w=400&q=80"
+        },
+        "updatedAt": {
+          "timestampValue": "2026-04-04T12:00:00Z"
+        }
+      },
+      "createTime": "2026-04-03T19:48:27.210102Z",
+      "updateTime": "2026-04-03T19:48:27.210102Z"
+    },
+    {
+      "name": "projects/last-bite-179b2/databases/(default)/documents/foodItems/item_309",
+      "fields": {
+        "restaurantName": {
+          "stringValue": "Vegan Delights"
+        },
+        "isAvailable": {
+          "booleanValue": true
+        },
+        "restaurantId": {
+          "stringValue": "rest_003"
+        },
+        "isDonation": {
+          "booleanValue": false
+        },
+        "updatedAt": {
+          "timestampValue": "2026-04-04T12:00:00Z"
+        },
+        "name": {
+          "stringValue": "Sweet Potato Fries"
+        },
+        "rating": {
+          "doubleValue": 4.5
+        },
+        "image": {
+          "stringValue": "https://images.unsplash.com/photo-1585109649139-36682b137dcc?w=400&q=80"
+        },
+        "distance": {
+          "doubleValue": 3.2
+        },
+        "createdAt": {
+          "timestampValue": "2026-04-04T12:00:00Z"
+        },
+        "id": {
+          "stringValue": "item_309"
+        },
+        "quantity": {
+          "integerValue": "25"
+        },
+        "batchId": {
+          "stringValue": "BATCH_003_SPFRIES"
+        },
+        "category": {
+          "stringValue": "fast-food"
+        },
+        "description": {
+          "stringValue": "Baked sweet potato fries served with a vegan garlic aioli."
+        },
+        "originalPrice": {
+          "integerValue": "160"
+        },
+        "expiryHours": {
+          "integerValue": "3"
+        },
+        "isVeg": {
+          "booleanValue": true
+        },
+        "expiryTime": {
+          "timestampValue": "2026-04-05T19:00:00Z"
+        },
+        "discountedPrice": {
+          "integerValue": "140"
+        }
+      },
+      "createTime": "2026-04-03T19:48:27.399574Z",
+      "updateTime": "2026-04-03T19:48:27.399574Z"
+    },
+    {
+      "name": "projects/last-bite-179b2/databases/(default)/documents/foodItems/item_310",
+      "fields": {
+        "restaurantId": {
+          "stringValue": "rest_003"
+        },
+        "isDonation": {
+          "booleanValue": true
+        },
+        "restaurantName": {
+          "stringValue": "Vegan Delights"
+        },
+        "isAvailable": {
+          "booleanValue": true
+        },
+        "image": {
+          "stringValue": "https://images.unsplash.com/photo-1547592166-23111c1ea3dd?w=400&q=80"
+        },
+        "name": {
+          "stringValue": "Lentil Soup"
+        },
+        "rating": {
+          "doubleValue": 4.6
+        },
+        "updatedAt": {
+          "timestampValue": "2026-04-04T12:00:00Z"
+        },
+        "createdAt": {
+          "timestampValue": "2026-04-04T12:00:00Z"
+        },
+        "distance": {
+          "doubleValue": 3.2
+        },
+        "batchId": {
+          "stringValue": "BATCH_003_LSOUP"
+        },
+        "quantity": {
+          "integerValue": "20"
+        },
+        "id": {
+          "stringValue": "item_310"
+        },
+        "category": {
+          "stringValue": "healthy"
+        },
+        "originalPrice": {
+          "integerValue": "150"
+        },
+        "description": {
+          "stringValue": "Warm and hearty comfort soup made with wholesome red lentils and carrots."
+        },
+        "isVeg": {
+          "booleanValue": true
+        },
+        "expiryHours": {
+          "integerValue": "6"
+        },
+        "discountedPrice": {
+          "integerValue": "120"
+        },
+        "expiryTime": {
+          "timestampValue": "2026-04-05T22:00:00Z"
+        }
+      },
+      "createTime": "2026-04-03T19:48:27.460324Z",
+      "updateTime": "2026-04-03T19:48:27.460324Z"
+    },
+    {
+      "name": "projects/last-bite-179b2/databases/(default)/documents/foodItems/qKJmCocGAWlDp50SfTRc",
+      "fields": {
+        "restaurantName": {
+          "stringValue": "Faozan"
+        },
+        "isAvailable": {
+          "booleanValue": true
+        },
+        "restaurantId": {
+          "stringValue": "EPA7oPKvoxgWh85y7sY0XnOGN1N2"
+        },
+        "isDonation": {
+          "booleanValue": false
+        },
+        "name": {
+          "stringValue": "burger"
+        },
+        "rating": {
+          "integerValue": "0"
+        },
+        "updatedAt": {
+          "timestampValue": "2026-04-04T05:41:20.727Z"
+        },
+        "createdAt": {
+          "timestampValue": "2026-04-04T05:27:34.112Z"
+        },
+        "quantity": {
+          "integerValue": "10"
+        },
+        "batchId": {
+          "stringValue": "B1775280454542"
+        },
+        "category": {
+          "stringValue": "fast-food"
+        },
+        "originalPrice": {
+          "integerValue": "300"
+        },
+        "description": {
+          "stringValue": "gdfgf"
+        },
+        "isVeg": {
+          "booleanValue": true
+        },
+        "expiryHours": {
+          "integerValue": "10"
+        },
+        "expiryTime": {
+          "timestampValue": "2026-04-04T15:27:34.542Z"
+        },
+        "discountedPrice": {
+          "integerValue": "234"
+        }
+      },
+      "createTime": "2026-04-04T05:27:34.147186Z",
+      "updateTime": "2026-04-04T05:41:20.753654Z"
+    }
+  ]
+}
