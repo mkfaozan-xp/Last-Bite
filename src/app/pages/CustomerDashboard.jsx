@@ -95,23 +95,24 @@ export default function CustomerDashboard() {
       <Navigation />
       <Cart />
 
-      <div className="container mx-auto px-4 py-6 space-y-6">
-        {/* Search Bar */}
-        <motion.div initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} className="relative">
-          <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
-          <Input
-            placeholder="Search for food, restaurants..."
-            value={searchQuery}
-            onChange={e => setSearchQuery(e.target.value)}
-            className="pl-12 h-14 text-lg shadow-lg border-2"
-          />
+      <div className="container mx-auto space-y-6 px-4 pb-24 pt-4 md:py-6">
+        <motion.div initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} className="flex flex-col gap-3 sm:flex-row">
+          <div className="relative flex-1">
+            <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
+            <Input
+              placeholder="Search for food, restaurants..."
+              value={searchQuery}
+              onChange={e => setSearchQuery(e.target.value)}
+              className="h-14 border-2 pl-12 text-base shadow-lg sm:text-lg"
+            />
+          </div>
           <Button
             variant="outline"
-            className="absolute right-2 top-1/2 -translate-y-1/2"
+            className="h-14 w-full sm:w-auto"
             onClick={() => setShowFilters(!showFilters)}
           >
-            <Filter className="h-4 w-4 mr-2" /> Filters
-            <ChevronDown className={`h-4 w-4 ml-1 transition-transform ${showFilters ? 'rotate-180' : ''}`} />
+            <Filter className="mr-2 h-4 w-4" /> Filters
+            <ChevronDown className={`ml-1 h-4 w-4 transition-transform ${showFilters ? 'rotate-180' : ''}`} />
           </Button>
         </motion.div>
 
@@ -119,7 +120,7 @@ export default function CustomerDashboard() {
         {showFilters && (
           <motion.div initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }}>
             <Card>
-              <CardContent className="p-6 grid md:grid-cols-4 gap-6">
+              <CardContent className="grid gap-6 p-6 md:grid-cols-2 xl:grid-cols-4">
                 <div>
                   <label className="text-sm font-medium mb-2 block">Dietary</label>
                   <Select value={vegFilter} onValueChange={(v) => setVegFilter(v)}>
@@ -160,7 +161,7 @@ export default function CustomerDashboard() {
         <div className="grid lg:grid-cols-3 gap-6">
           <div className="lg:col-span-2 space-y-6">
             <Tabs defaultValue="deals" className="w-full">
-              <TabsList className="grid w-full grid-cols-3">
+              <TabsList className="grid h-auto w-full grid-cols-1 gap-2 bg-transparent p-0 sm:grid-cols-3">
                 <TabsTrigger value="deals"><Zap className="h-4 w-4 mr-1" /> Flash Deals</TabsTrigger>
                 <TabsTrigger value="trending"><TrendingUp className="h-4 w-4 mr-1" /> Trending</TabsTrigger>
                 <TabsTrigger value="nearby"><MapPin className="h-4 w-4 mr-1" /> Nearby</TabsTrigger>

@@ -4,6 +4,9 @@
   "version": "0.0.1",
   "type": "module",
   "scripts": {
+    "firebase:seed-india": "node scripts/seedFirebaseIndianDemo.mjs",
+    "ml:food-catalog": "node scripts/buildFoodLabelCatalog.mjs",
+    "ml:manifest": "node scripts/buildFoodQualityManifest.mjs",
     "build": "vite build",
     "dev": "vite",
     "preview": "vite preview"
@@ -40,6 +43,9 @@
     "@radix-ui/react-toggle": "1.1.2",
     "@radix-ui/react-toggle-group": "1.1.2",
     "@radix-ui/react-tooltip": "1.1.8",
+    "@tensorflow-models/coco-ssd": "^2.2.3",
+    "@tensorflow-models/mobilenet": "^2.1.1",
+    "@tensorflow/tfjs": "^4.22.0",
     "canvas-confetti": "1.9.4",
     "class-variance-authority": "0.7.1",
     "clsx": "2.1.1",

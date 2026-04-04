@@ -1,0 +1,35 @@
+{
+  "projectId": "surplus-food-4cc9f",
+  "runTag": "20260404",
+  "password": "LastBite!123",
+  "counts": {
+    "restaurants": 10,
+    "ngos": 4,
+    "customers": 8,
+    "foodItems": 79,
+    "images": 79,
+    "orders": 12,
+    "donations": 6,
+    "qualityScans": 10,
+    "transactions": 16,
+    "stockAlerts": 8
+  },
+  "loginSamples": {
+    "restaurant": {
+      "email": "dilli-zaika-junction.20260404@lastbite-demo.test",
+      "password": "LastBite!123",
+      "name": "Dilli Zaika Junction"
+    },
+    "ngo": {
+      "email": "annapurna-relief-trust.20260404@lastbite-demo.test",
+      "password": "LastBite!123",
+      "name": "Annapurna Relief Trust"
+    },
+    "customer": {
+      "email": "ananya-sen.20260404@lastbite-demo.test",
+      "password": "LastBite!123",
+      "name": "Ananya Sen"
+    }
+  },
+  "sources": "Wikipedia search API thumbnails for Indian dishes"
+}

@@ -3,17 +3,19 @@ import { useNavigate } from 'react-router';
 import { motion, AnimatePresence } from 'motion/react';
 import { 
   Leaf, DollarSign, Heart, TrendingDown, Eye, EyeOff, AlertCircle, 
-  ChevronRight, Sparkles, ArrowRight, ShieldCheck, Zap,
+  ChevronRight, Sparkles, ArrowRight, ShieldCheck,
   Globe, Clock, Users, Activity
 } from 'lucide-react';
 import { Button } from '../components/ui/button';
 import { Input }  from '../components/ui/input';
 import { Card, CardContent } from '../components/ui/card';
+import { useApp } from '../contexts/AppContext';
 import { signUpWithEmail, signInWithEmail, signInWithGoogle } from '../../services/authService';
 import { toast } from 'sonner';
 
 export default function Landing() {
   const navigate = useNavigate();
+  const { currentUser, userType, syncUserProfile } = useApp();
   const [mode, setMode] = useState('signup');
   const [name, setName] = useState('');
   const [orgName, setOrgName] = useState('');
@@ -40,10 +42,15 @@ export default function Landing() {
   }, []);
 
   const redirectByType = (type) => {
-    if (type === 'restaurant') return navigate('/restaurant-dashboard');
-    if (type === 'ngo')        return navigate('/ngo-dashboard');
-    navigate('/home');
+    if (type === 'restaurant') return navigate('/restaurant-dashboard', { replace: true });
+    if (type === 'ngo')        return navigate('/ngo-dashboard', { replace: true });
+    navigate('/home', { replace: true });
   };
+
+  useEffect(() => {
+    if (!currentUser || !userType) return;
+    redirectByType(userType);
+  }, [currentUser, userType]);
 
   const handleSubmit = async (e) => {
     if (e) e.preventDefault();
@@ -85,10 +92,12 @@ export default function Landing() {
     try {
       if (mode === 'signup') {
         const user = await signUpWithEmail(email, password, name, userTypeSelection, orgName, address);
+        syncUserProfile(user);
         toast.success(`Welcome to LastBite, ${user.name}! 🎉`);
-        redirectByType(userTypeSelection);
+        redirectByType(user.userType ?? userTypeSelection);
       } else {
         const user = await signInWithEmail(email, password);
+        syncUserProfile(user);
         toast.success(`Welcome back, ${user.name}!`);
         redirectByType(user.userType);
       }
@@ -104,9 +113,11 @@ export default function Landing() {
   };
 
   const handleGoogle = async () => {
+    setError('');
     setLoading(true);
     try {
       const user = await signInWithGoogle(userTypeSelection);
+      syncUserProfile(user);
       toast.success(`Welcome, ${user.name}!`);
       redirectByType(user.userType);
     } catch (err) {
@@ -151,7 +162,7 @@ export default function Landing() {
           scrolled ? 'bg-white/70 dark:bg-black/50 backdrop-blur-xl border-b border-white/20 dark:border-white/10 shadow-sm' : 'bg-transparent'
         }`}
       >
-        <div className="container mx-auto px-6 h-20 flex items-center justify-between">
+        <div className="container mx-auto flex h-16 items-center justify-between px-4 sm:h-20 sm:px-6">
           <div className="flex items-center gap-2">
             <div className="w-8 h-8 rounded-xl bg-gradient-to-br from-emerald-500 to-teal-600 flex items-center justify-center shadow-lg shadow-emerald-500/20">
               <Leaf className="w-5 h-5 text-white" />
@@ -167,7 +178,7 @@ export default function Landing() {
       </motion.nav>
 
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 z-10 px-4">
+      <section className="relative z-10 px-4 pb-20 pt-28 lg:pb-32 lg:pt-48">
         <div className="container mx-auto">
           <div className="grid lg:grid-cols-12 gap-16 items-center">
             
@@ -183,7 +194,7 @@ export default function Landing() {
                 <span className="text-sm font-semibold text-emerald-700 dark:text-emerald-300">India's #1 Surplus Food Platform</span>
               </motion.div>
               
-              <motion.h1 variants={fadeUp} className="text-5xl lg:text-7xl xl:text-8xl font-extrabold tracking-tighter leading-[1.1]">
+              <motion.h1 variants={fadeUp} className="text-4xl font-extrabold leading-[1.1] tracking-tighter sm:text-5xl lg:text-7xl xl:text-8xl">
                 Save Food.<br />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-teal-500 dark:from-emerald-400 dark:to-teal-300">
                   Save Money.
@@ -220,7 +231,7 @@ export default function Landing() {
               <div className="absolute -inset-0.5 bg-gradient-to-br from-emerald-500 to-orange-500 rounded-[2.5rem] blur opacity-20 dark:opacity-40" />
               
               <Card className="relative backdrop-blur-2xl bg-white/80 dark:bg-[#111111]/90 border border-white/40 dark:border-white/10 shadow-2xl rounded-[2.5rem] overflow-hidden">
-                <CardContent className="p-8 sm:p-10">
+                <CardContent className="p-6 sm:p-8 lg:p-10">
                   
                   {/* Mode Switcher */}
                   <div className="flex p-1 bg-slate-100 dark:bg-white/5 rounded-2xl mb-8">
@@ -267,7 +278,7 @@ export default function Landing() {
                           className="space-y-3"
                         >
                           <label className="text-sm font-semibold text-slate-700 dark:text-slate-300">I am joining as a:</label>
-                          <div className="grid grid-cols-3 gap-3">
+                          <div className="grid grid-cols-1 gap-3 sm:grid-cols-3">
                             {['customer', 'restaurant', 'ngo'].map(type => (
                               <button
                                 key={type}
@@ -540,22 +551,7 @@ export default function Landing() {
               <p className="text-lg text-slate-500 dark:text-slate-400 max-w-2xl mx-auto mb-10 leading-relaxed">
                 Our background systems constantly monitor inventory. Items within 24-48 hours of expiry get <strong>smart discounts (20%-50%)</strong>. Unpurchased items hitting the 24-hour mark are strictly removed from the marketplace and <strong>auto-donated to NGOs</strong>.
               </p>
-              
-              <Button 
-                onClick={async () => {
-                  try {
-                    toast.loading("Simulating Engine Cycle...", { id: "cron" });
-                    await processFoodExpiries();
-                    toast.success("Cycle Complete: Discounts applied & Donations routed!", { id: "cron", duration: 5000 });
-                  } catch (e) {
-                    toast.error("Failed to run engine simulation.", { id: "cron" });
-                  }
-                }}
-                className="h-16 px-10 rounded-2xl bg-slate-900 hover:bg-slate-800 dark:bg-white dark:hover:bg-slate-100 text-white dark:text-slate-900 font-bold text-lg transition-transform hover:scale-105 shadow-xl"
-              >
-                <Zap className="w-6 h-6 mr-3 text-emerald-500" />
-                Run System Simulation
-              </Button>
+
             </div>
           </motion.div>
         </div>

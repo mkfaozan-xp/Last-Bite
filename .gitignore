@@ -26,3 +26,11 @@ tmp/
 
 # Vite cache
 .vite/
+
+# Local dev error output
+.vite-dev.err
+
+# Large local ML artifacts and downloaded datasets
+datasets/downloads/
+datasets/external/
+public/ml/dataset/

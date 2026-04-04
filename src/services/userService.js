@@ -4,12 +4,13 @@ import {
   updateDoc,
   serverTimestamp,
   increment,
-  collection,
-  addDoc
 } from "firebase/firestore"
 import { updateProfile } from "firebase/auth"
-import { compressImageToBase64 } from "../utils/imageCompressor"
 import { db, auth } from "../firebase"
+import {
+  getFirestoreImageData,
+  uploadFirestoreImage,
+} from "./firestoreImageService"
 
 export async function getUserProfile(uid) {
   const snap = await getDoc(doc(db, "users", uid))
@@ -18,20 +19,13 @@ export async function getUserProfile(uid) {
   
   let avatar = data.avatar;
   if (data.avatarImageId) {
-    try {
-      const imgSnap = await getDoc(doc(db, "images", data.avatarImageId));
-      if (imgSnap.exists()) {
-        avatar = imgSnap.data().data;
-      }
-    } catch (err) {
-      console.warn("Failed to load avatar image:", err);
-    }
+    avatar = await getFirestoreImageData(data.avatarImageId) || avatar;
   }
 
   return {
     uid,
     ...data,
-    avatar, // use resolved avatar overriding initial mapping
+    avatar, 
     createdAt: data.createdAt?.toDate?.() ?? new Date(),
     updatedAt: data.updatedAt?.toDate?.() ?? new Date()
   }
@@ -48,16 +42,20 @@ export async function updateUserProfile(uid, updates) {
 }
 
 export async function uploadAvatar(uid, file) {
-  const base64DataUrl = await compressImageToBase64(file, 400, 0.7)
-  const imageDocRef = await addDoc(collection(db, "images"), {
-    data: base64DataUrl,
-    createdAt: serverTimestamp()
+  const { imageId, data } = await uploadFirestoreImage(file, {
+    maxSize: 400,
+    quality: 0.7,
+    metadata: {
+      ownerType: 'user',
+      ownerId: uid,
+      kind: 'avatar',
+    },
   })
   await updateDoc(doc(db, "users", uid), {
-    avatarImageId: imageDocRef.id,
+    avatarImageId: imageId,
     updatedAt: serverTimestamp()
   })
-  return base64DataUrl
+  return data
 }
 
 export async function addRewardsPoints(uid, points) {

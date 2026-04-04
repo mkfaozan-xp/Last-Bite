@@ -4,7 +4,12 @@ import {
   onSnapshot, serverTimestamp, increment, Timestamp,
 } from 'firebase/firestore';
 import { db } from '../firebase';
-import { compressImageToBase64 } from '../utils/imageCompressor';
+import {
+  deleteFirestoreImage,
+  getFirestoreImageData,
+  resolveItemsWithFirestoreImages,
+  uploadFirestoreImage,
+} from './firestoreImageService';
 
 const COL = 'foodItems';
 
@@ -27,19 +32,7 @@ function mapDoc(id, data) {
 }
 
 async function resolveBatchImages(items, idField = 'foodImageId', targetField = 'image') {
-  return Promise.all(items.map(async (item) => {
-    if (item[idField]) {
-      try {
-        const imgSnap = await getDoc(doc(db, "images", item[idField]));
-        if (imgSnap.exists()) {
-          return { ...item, [targetField]: imgSnap.data().data };
-        }
-      } catch (err) {
-        console.warn(`Failed to load image for ${item.id}:`, err);
-      }
-    }
-    return item;
-  }));
+  return resolveItemsWithFirestoreImages(items, idField, targetField);
 }
 
 export async function addFoodItem(
@@ -86,7 +79,10 @@ export async function decreaseItemQuantity(id, qty) {
 
 
 export async function deleteFoodItem(id) {
-  try { await deleteObject(ref(storage, `foodItems/${id}`)); } catch (_) { /* ok */ }
+  const snap = await getDoc(doc(db, COL, id));
+  if (snap.exists()) {
+    await deleteFirestoreImage(snap.data().foodImageId);
+  }
   await deleteDoc(doc(db, COL, id));
 }
 
@@ -94,16 +90,7 @@ export async function getFoodItem(id) {
   const snap = await getDoc(doc(db, COL, id));
   if (!snap.exists()) return null;
   const item = mapDoc(snap.id, snap.data());
-  if (item.foodImageId) {
-    try {
-      const imgSnap = await getDoc(doc(db, "images", item.foodImageId));
-      if (imgSnap.exists()) {
-        item.image = imgSnap.data().data;
-      }
-    } catch (err) {
-      console.warn("Failed to load food image:", err);
-    }
-  }
+  if (item.foodImageId) item.image = await getFirestoreImageData(item.foodImageId);
   return item;
 }
 
@@ -124,10 +111,11 @@ export async function getAvailableFoodItems(
   }
   const snap = await getDocs(q);
   const now = new Date();
+  const DONATION_THRESHOLD_MS = 24 * 60 * 60 * 1000; // 24 hours
   
   let items = snap.docs.map(d => mapDoc(d.id, d.data()));
-  // Local filtering and sorting to bypass Firebase composite index requirements
-  items = items.filter(i => i.expiryTime > now);
+  // Hide items with 24h or less remaining — those go to NGO donations, not customers
+  items = items.filter(i => (i.expiryTime.getTime() - now.getTime()) > DONATION_THRESHOLD_MS);
   items.sort((a,b) => a.expiryTime.getTime() - b.expiryTime.getTime());
   
   const limitedItems = items.slice(0, maxItems);
@@ -148,34 +136,54 @@ export async function getRestaurantFoodItems(restaurantId) {
 
 
 export function listenToAvailableItems(cb) {
+  const DONATION_THRESHOLD_MS = 24 * 60 * 60 * 1000; // 24 hours
+  let latestDocs = []; // cache latest snapshot docs for periodic re-filter
+
+  const filterAndEmit = async () => {
+    const now = new Date();
+    let items = latestDocs.map(d => mapDoc(d.id, d.data()));
+    // Hide items with 24h or less remaining — those go to NGO donations, not customers
+    items = items.filter(i => (i.expiryTime.getTime() - now.getTime()) > DONATION_THRESHOLD_MS);
+    items.sort((a,b) => a.expiryTime.getTime() - b.expiryTime.getTime());
+    const limitedItems = items.slice(0, 40);
+    const resolvedItems = await resolveBatchImages(limitedItems);
+    cb(resolvedItems);
+  };
+
   const q = query(
     collection(db, COL),
     where('isAvailable', '==', true)
   );
-  return onSnapshot(q, async (snap) => {
-    const now = new Date();
-    let items = snap.docs.map(d => mapDoc(d.id, d.data()));
-    // Local filtering and sorting bypasses Firebase composite index requirements
-    items = items.filter(i => {
-      return i.expiryTime > now;
-    });
-    items.sort((a,b) => a.expiryTime.getTime() - b.expiryTime.getTime());
-    
-    const limitedItems = items.slice(0, 40);
-    const resolvedItems = await resolveBatchImages(limitedItems);
-    cb(resolvedItems);
+
+  const unsubSnapshot = onSnapshot(q, (snap) => {
+    latestDocs = snap.docs;
+    filterAndEmit();
   }, error => {
     console.error("Firebase listen error:", error);
   });
+
+  // Re-filter every 30 seconds so items crossing the 24h threshold disappear dynamically
+  const intervalId = setInterval(() => {
+    if (latestDocs.length > 0) filterAndEmit();
+  }, 30000);
+
+  // Return cleanup function that unsubscribes snapshot AND clears interval
+  return () => {
+    unsubSnapshot();
+    clearInterval(intervalId);
+  };
 }
 
 
 export async function uploadFoodImage(itemId, file) {
-  // Compress food images aggressively down to 600px width with 0.6 quality for lists
-  const base64DataUrl = await compressImageToBase64(file, 600, 0.6);
-  const imageDocRef = await addDoc(collection(db, "images"), {
-    data: base64DataUrl,
-    createdAt: serverTimestamp()
+  const { imageId } = await uploadFirestoreImage(file, {
+    maxSize: 600,
+    quality: 0.6,
+    metadata: {
+      ownerType: 'foodItem',
+      ownerId: itemId,
+      kind: 'food-photo',
+    },
   });
-  return imageDocRef.id;
+  return imageId;
 }

@@ -1,7 +1,7 @@
 // src/pages/RestaurantDashboard.jsx
 import React, { useState, useEffect } from 'react';
 import { motion } from 'motion/react';
-import { TrendingUp, Package, DollarSign, Clock, Upload, Plus, BarChart3, AlertCircle } from 'lucide-react';
+import { TrendingUp, Package, DollarSign, Clock, Upload, Plus, BarChart3, AlertCircle, Leaf, Microscope, ShieldCheck, ShieldAlert, ShieldX } from 'lucide-react';
 import { Navigation } from '../components/Navigation';
 import { Card, CardContent, CardHeader, CardTitle } from '../components/ui/card';
 import { Button } from '../components/ui/button';
@@ -12,11 +12,13 @@ import { Badge } from '../components/ui/badge';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from '../components/ui/dialog';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '../components/ui/select';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, BarChart, Bar } from 'recharts';
+import { Link } from 'react-router';
 import { useApp } from '../contexts/AppContext';
 import {
   addFoodItem, getRestaurantFoodItems, updateItemPrice, deleteFoodItem,
 } from '../../services/foodItemService';
 import { listenToRestaurantOrders, updateOrderStatus, cancelOrder } from '../../services/orderService';
+import { listenToRestaurantDonations } from '../../services/donationService';
 import { getRestaurantDashboardStats } from '../../services/restaurantService';
 import { toast } from 'sonner';
 
@@ -28,6 +30,7 @@ export default function RestaurantDashboard() {
   const [showAddDialog, setShowAddDialog] = useState(false);
   const [inventoryItems, setInventoryItems] = useState([]);
   const [liveOrders, setLiveOrders] = useState([]);
+  const [donations, setDonations] = useState([]);
   const [stats, setStats] = useState({ todayEarnings: 0, monthlyEarnings: 0, pendingOrders: 0, totalItems: 0 });
   const [newPrices, setNewPrices] = useState({});
   const [imageFile, setImageFile] = useState(null);
@@ -63,7 +66,7 @@ export default function RestaurantDashboard() {
     { time: '10 PM', demand: 30 },
   ];
 
-  
+
   useEffect(() => {
     if (!restaurantId) return;
 
@@ -78,7 +81,16 @@ export default function RestaurantDashboard() {
       setLiveOrders(orders);
       setStats(prev => ({ ...prev, pendingOrders: orders.filter(o => o.status === 'pending').length }));
     });
-    return unsub;
+
+    // Real-time donations
+    const unsubDonations = listenToRestaurantDonations(restaurantId, (docs) => {
+      setDonations(docs);
+    });
+
+    return () => {
+      unsub();
+      unsubDonations();
+    };
   }, [restaurantId]);
 
   // ── Add food item ──────────────────────────────────────────────────────────
@@ -174,9 +186,8 @@ export default function RestaurantDashboard() {
     <div className="min-h-screen bg-gradient-to-br from-blue-50/50 via-white to-purple-50/50 dark:from-gray-950 dark:via-gray-900 dark:to-gray-950">
       <Navigation />
 
-      <div className="container mx-auto px-4 py-6 space-y-6">
-        {/* Header */}
-        <div className="flex items-center justify-between">
+      <div className="container mx-auto space-y-6 px-4 pb-24 pt-4 md:py-6">
+        <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
           <div>
             <h1 className="text-3xl font-bold">Restaurant Dashboard</h1>
             <p className="text-muted-foreground">Manage your inventory and earnings</p>
@@ -265,7 +276,7 @@ export default function RestaurantDashboard() {
         </div>
 
         {/* Stats Cards */}
-        <div className="grid md:grid-cols-4 gap-6">
+        <div className="grid gap-6 sm:grid-cols-2 xl:grid-cols-4">
           {[
             { label: "Today's Earnings", value: `₹${stats.todayEarnings.toLocaleString()}`, sub: 'Live', color: 'from-green-500 to-green-600', icon: <DollarSign className="h-12 w-12 opacity-50" /> },
             { label: 'Monthly Total', value: `₹${stats.monthlyEarnings.toLocaleString()}`, sub: 'This month', color: 'from-blue-500 to-blue-600', icon: <TrendingUp className="h-12 w-12 opacity-50" /> },
@@ -351,9 +362,18 @@ export default function RestaurantDashboard() {
             ) : (
               <div className="space-y-4">
                 {inventoryItems.map(item => (
-                  <div key={item.id} className="flex items-center justify-between p-4 border rounded-lg hover:shadow-md transition-shadow">
-                    <div className="space-y-1">
-                      <div className="flex items-center gap-3">
+                  <div key={item.id} className="flex flex-col gap-4 rounded-lg border p-4 transition-shadow hover:shadow-md xl:flex-row xl:items-center xl:justify-between">
+                    <div className="space-y-3">
+                      <div className="h-24 w-full overflow-hidden rounded-lg border bg-muted sm:w-32">
+                        {item.image ? (
+                          <img src={item.image} alt={item.name} className="h-full w-full object-cover" />
+                        ) : (
+                          <div className="flex h-full w-full items-center justify-center text-3xl">
+                            {item.category === 'fast-food' ? '🍔' : item.category === 'indian' ? '🍛' : item.category === 'dessert' ? '🍰' : '🥗'}
+                          </div>
+                        )}
+                      </div>
+                      <div className="flex flex-wrap items-center gap-2 sm:gap-3">
                         <h4 className="font-semibold">{item.name}</h4>
                         <Badge variant="secondary">Batch: {item.batchId}</Badge>
                         {item.isVeg && <Badge className="bg-green-600 text-xs">VEG</Badge>}
@@ -364,7 +384,7 @@ export default function RestaurantDashboard() {
                         )}
                         {!item.isAvailable && <Badge variant="secondary">Sold Out</Badge>}
                       </div>
-                      <div className="flex items-center gap-4 text-sm text-muted-foreground">
+                      <div className="flex flex-wrap items-center gap-2 text-sm text-muted-foreground sm:gap-4">
                         <span>Qty: {item.quantity} units</span>
                         <span>•</span>
                         <span className="flex items-center gap-1">
@@ -374,22 +394,110 @@ export default function RestaurantDashboard() {
                         <span>Original: ₹{item.originalPrice}</span>
                       </div>
                     </div>
-                    <div className="flex items-center gap-3">
-                      <div className="text-right">
+                    <div className="flex flex-col gap-3 sm:flex-row sm:items-end xl:items-center">
+                      <div className="text-left sm:text-right">
                         <p className="text-sm text-muted-foreground">Current Price</p>
                         <p className="text-2xl font-bold text-green-600">₹{item.discountedPrice}</p>
                       </div>
-                      <div className="flex gap-2">
+                      <div className="flex w-full flex-col gap-2 sm:w-auto sm:flex-row">
                         <Input
                           type="number"
                           placeholder="New price"
-                          className="w-24"
+                          className="w-full sm:w-24"
                           value={newPrices[item.id] ?? ''}
                           onChange={e => setNewPrices(prev => ({ ...prev, [item.id]: e.target.value }))}
                         />
                         <Button size="sm" onClick={() => handlePriceUpdate(item.id)} className="bg-blue-600">
                           Update
                         </Button>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            )}
+          </CardContent>
+        </Card>
+
+        {/* Donations Section */}
+        <Card>
+          <CardHeader>
+            <CardTitle className="flex items-center gap-2">
+              <Package className="h-5 w-5 text-green-600" />
+              Donations Claimed by NGOs
+              {donations.filter(d => d.status === 'accepted').length > 0 && (
+                <Badge className="bg-green-600 animate-pulse">
+                  {donations.filter(d => d.status === 'accepted').length} Accepted
+                </Badge>
+              )}
+            </CardTitle>
+          </CardHeader>
+          <CardContent>
+            {donations.length === 0 ? (
+              <div className="py-12 text-center text-muted-foreground">
+                <Leaf className="h-12 w-12 mx-auto mb-4 opacity-50" />
+                <p>No food donations yet.</p>
+              </div>
+            ) : (
+              <div className="space-y-4">
+                {donations.map(donation => (
+                  <div key={donation.id} className="space-y-3 rounded-lg border p-4 transition-shadow hover:shadow-sm">
+                    <div className="flex flex-col gap-4 lg:flex-row lg:items-start lg:justify-between">
+                      <div className="space-y-1">
+                        <div className="flex flex-wrap items-center gap-2 sm:gap-3">
+                          <h4 className="font-semibold">#{donation.id.slice(-6).toUpperCase()}</h4>
+                          <Badge className={
+                            donation.status === 'picked_up' ? 'bg-teal-500' :
+                            donation.status === 'accepted' ? 'bg-green-500' : 'bg-orange-500'
+                          }>
+                            {donation.status.toUpperCase()}
+                          </Badge>
+                          {/* Quality scan status badges */}
+                          {donation.restaurantQualityStatus && (
+                            <Badge variant="outline" className={`text-[10px] gap-1 ${
+                              donation.restaurantQualityStatus === 'fresh' ? 'text-green-700 border-green-300' :
+                              donation.restaurantQualityStatus === 'semi-rotten' ? 'text-amber-700 border-amber-300' :
+                              'text-red-700 border-red-300'
+                            }`}>
+                              {donation.restaurantQualityStatus === 'fresh' ? <ShieldCheck className="h-3 w-3" /> :
+                               donation.restaurantQualityStatus === 'semi-rotten' ? <ShieldAlert className="h-3 w-3" /> :
+                               <ShieldX className="h-3 w-3" />}
+                              🏪 {donation.restaurantQualityStatus === 'fresh' ? 'Fresh' : donation.restaurantQualityStatus === 'semi-rotten' ? 'Caution' : 'Rotten'}
+                            </Badge>
+                          )}
+                          {donation.ngoQualityStatus && (
+                            <Badge variant="outline" className={`text-[10px] gap-1 ${
+                              donation.ngoQualityStatus === 'fresh' ? 'text-green-700 border-green-300' :
+                              donation.ngoQualityStatus === 'semi-rotten' ? 'text-amber-700 border-amber-300' :
+                              'text-red-700 border-red-300'
+                            }`}>
+                              {donation.ngoQualityStatus === 'fresh' ? <ShieldCheck className="h-3 w-3" /> :
+                               donation.ngoQualityStatus === 'semi-rotten' ? <ShieldAlert className="h-3 w-3" /> :
+                               <ShieldX className="h-3 w-3" />}
+                              🤝 NGO: {donation.ngoQualityStatus === 'fresh' ? 'Verified' : donation.ngoQualityStatus === 'semi-rotten' ? 'Caution' : 'Rejected'}
+                            </Badge>
+                          )}
+                        </div>
+                        <p className="text-sm font-medium text-green-600">
+                          {donation.ngoOrgName || donation.ngoName || 'NGO Partner'}
+                        </p>
+                        <p className="text-sm text-muted-foreground">
+                          Items: {donation.items}
+                        </p>
+                      </div>
+                      <div className="space-y-1 text-left lg:text-right">
+                        <p className="text-lg font-bold text-orange-600">{donation.quantity} units</p>
+                        <p className="text-xs text-muted-foreground">
+                          {donation.status === 'accepted' ? 'Accepted' : 'Updated'}: {donation.updatedAt?.toLocaleTimeString()}
+                        </p>
+                        {/* Scan before pickup button */}
+                        {donation.status === 'accepted' && !donation.restaurantScanId && (
+                          <Link to="/food-scanner">
+                            <Button size="sm" variant="outline" className="text-xs gap-1.5 mt-1 border-purple-300 text-purple-700 hover:bg-purple-50">
+                              <Microscope className="h-3.5 w-3.5" /> Scan Before Pickup
+                            </Button>
+                          </Link>
+                        )}
                       </div>
                     </div>
                   </div>
@@ -420,16 +528,16 @@ export default function RestaurantDashboard() {
             ) : (
               <div className="space-y-3">
                 {liveOrders.map(order => (
-                  <div key={order.id} className="flex items-center justify-between p-4 border rounded-lg hover:shadow-sm transition-shadow">
+                  <div key={order.id} className="flex flex-col gap-4 rounded-lg border p-4 transition-shadow hover:shadow-sm lg:flex-row lg:items-center lg:justify-between">
                     <div className="space-y-1">
-                      <div className="flex items-center gap-3">
+                      <div className="flex flex-wrap items-center gap-2 sm:gap-3">
                         <h4 className="font-semibold">#{order.id.slice(-6).toUpperCase()}</h4>
                         {order.customerName && (
                           <span className="text-sm font-medium text-blue-600">({order.customerName})</span>
                         )}
                         <Badge className={
                           order.status === 'confirmed' ? 'bg-blue-500' :
-                          order.status === 'ready' ? 'bg-teal-500' : 'bg-orange-500'
+                            order.status === 'ready' ? 'bg-teal-500' : 'bg-orange-500'
                         }>
                           {order.status.toUpperCase()}
                         </Badge>
@@ -441,7 +549,7 @@ export default function RestaurantDashboard() {
                         {order.createdAt?.toLocaleTimeString()}
                       </p>
                     </div>
-                    <div className="text-right space-y-2">
+                    <div className="space-y-2 text-left lg:text-right">
                       <p className="text-xl font-bold text-green-600">₹{order.total}</p>
                       {order.status === 'pending' && (
                         <div className="flex flex-col gap-2 w-full max-w-[100px] ml-auto">

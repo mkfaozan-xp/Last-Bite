@@ -37,9 +37,26 @@ export async function acceptDonation(donationId, ngoId) {
     throw new Error('This donation has already been claimed by another NGO.');
   }
 
+  // Look up NGO details so the restaurant can see who accepted
+  let ngoName = 'NGO Partner';
+  let ngoOrgName = '';
+  try {
+    const ngoSnap = await getDoc(doc(db, 'users', ngoId));
+    if (ngoSnap.exists()) {
+      const ngoData = ngoSnap.data();
+      ngoName = ngoData.name || 'NGO Partner';
+      ngoOrgName = ngoData.orgName || ngoData.name || '';
+    }
+  } catch (e) {
+    console.warn('Failed to look up NGO details:', e);
+  }
+
   await updateDoc(docRef, {
     ngoId, 
+    ngoName,
+    ngoOrgName,
     status: 'accepted', 
+    acceptedAt: serverTimestamp(),
     updatedAt: serverTimestamp(),
   });
   
@@ -137,6 +154,22 @@ export function listenToNgoDonations(ngoId, cb) {
     ),
     async (snap) => {
       let docs = snap.docs.map(d => mapDoc(d.id, d.data()));
+      const enriched = await Promise.all(docs.map(enrichAddress));
+      cb(enriched);
+    }
+  );
+}
+
+export function listenToRestaurantDonations(restaurantId, cb) {
+  return onSnapshot(
+    query(
+      collection(db, COL),
+      where('restaurantId', '==', restaurantId)
+    ),
+    async (snap) => {
+      let docs = snap.docs.map(d => mapDoc(d.id, d.data()));
+      // Sort client-side to avoid composite index requirements
+      docs.sort((a, b) => b.createdAt.getTime() - a.createdAt.getTime());
       const enriched = await Promise.all(docs.map(enrichAddress));
       cb(enriched);
     }

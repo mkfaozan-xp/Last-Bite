@@ -1,7 +1,4 @@
-/**
- * Compress an image file natively on the client using HTML5 Canvas.
- * Returns a Base64 Data URI string.
- */
+
 export async function compressImageToBase64(file, maxWidth = 800, quality = 0.7) {
   return new Promise((resolve, reject) => {
     if (!file || !file.type.startsWith('image/')) {
@@ -18,8 +15,6 @@ export async function compressImageToBase64(file, maxWidth = 800, quality = 0.7)
       img.onload = () => {
         let width = img.width;
         let height = img.height;
-
-        // Shrink the image if it exceeds the maximum dimension
         if (width > maxWidth) {
           height = Math.round((height * maxWidth) / width);
           width = maxWidth;
@@ -32,7 +27,6 @@ export async function compressImageToBase64(file, maxWidth = 800, quality = 0.7)
         const ctx = canvas.getContext('2d');
         ctx.drawImage(img, 0, 0, width, height);
 
-        // Convert heavily compressed image directly back to a Data URI string
         const dataUrl = canvas.toDataURL('image/jpeg', quality);
         resolve(dataUrl);
       };

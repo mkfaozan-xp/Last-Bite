@@ -9,11 +9,13 @@ import {
   orderBy,
   serverTimestamp,
   increment,
-  Timestamp,
-  addDoc
+  Timestamp
 } from "firebase/firestore"
 import { db } from "../firebase"
-import { compressImageToBase64 } from "../utils/imageCompressor"
+import {
+  getFirestoreImageData,
+  uploadFirestoreImage,
+} from "./firestoreImageService"
 
 const COL = "restaurants"
 
@@ -28,14 +30,8 @@ function mapDoc(id, data) {
 
 async function resolveLogo(item) {
   if (item.logoImageId) {
-    try {
-      const imgSnap = await getDoc(doc(db, "images", item.logoImageId));
-      if (imgSnap.exists()) {
-        return { ...item, logo: imgSnap.data().data };
-      }
-    } catch (err) {
-      console.warn(`Failed to load logo for ${item.id}:`, err);
-    }
+    const logo = await getFirestoreImageData(item.logoImageId);
+    if (logo) return { ...item, logo };
   }
   return item;
 }
@@ -55,16 +51,20 @@ export async function updateRestaurant(id, updates) {
 }
 
 export async function uploadRestaurantLogo(id, file) {
-  const base64DataUrl = await compressImageToBase64(file, 600, 0.7);
-  const imageDocRef = await addDoc(collection(db, "images"), {
-    data: base64DataUrl,
-    createdAt: serverTimestamp()
+  const { imageId, data } = await uploadFirestoreImage(file, {
+    maxSize: 600,
+    quality: 0.7,
+    metadata: {
+      ownerType: 'restaurant',
+      ownerId: id,
+      kind: 'logo',
+    },
   });
   await updateDoc(doc(db, COL, id), { 
-    logoImageId: imageDocRef.id, 
+    logoImageId: imageId, 
     updatedAt: serverTimestamp() 
   })
-  return base64DataUrl
+  return data
 }
 
 export async function getAllRestaurants() {

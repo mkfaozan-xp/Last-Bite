@@ -7,12 +7,8 @@ import Orders from "./pages/Orders"
 import Wallet from "./pages/Wallet"
 import Profile from "./pages/Profile"
 import Explore from "./pages/Explore"
+import FoodQualityPage from "./pages/FoodQualityPage"
 
-// Root layout wrapper to handle dashboard routing
-function RootLayout() {
-  // This will be handled by navigation in the app
-  return null
-}
 
 export const router = createBrowserRouter([
   {
@@ -34,6 +30,10 @@ export const router = createBrowserRouter([
   {
     path: "/ngo-dashboard",
     element: <NGODashboard />
+  },
+  {
+    path: "/food-scanner",
+    element: <FoodQualityPage />
   },
   {
     path: "/explore",

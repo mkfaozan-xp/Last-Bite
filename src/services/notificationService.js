@@ -1,10 +1,7 @@
 import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
 import { db } from '../firebase';
 
-/**
- * Fires an automated email by writing a document to the standard 'mail'
- * collection, which is monitored by Firebase's SendGrid or Trigger Email extension.
- */
+
 export async function sendEmailNotification(to, subject, htmlBody) {
   try {
     await addDoc(collection(db, 'mail'), {
@@ -14,7 +11,7 @@ export async function sendEmailNotification(to, subject, htmlBody) {
         html: htmlBody,
       },
       createdAt: serverTimestamp(),
-      status: 'pending' // Processed asynchronously by the database backend
+      status: 'pending'
     });
     console.log(`[Notification Service] Registered email dispatcher target: ${to}`);
   } catch (err) {
@@ -22,9 +19,7 @@ export async function sendEmailNotification(to, subject, htmlBody) {
   }
 }
 
-/**
- * Specific template constructor for donation updates
- */
+
 export async function sendDonationStatusEmail(ngoEmail, ngoName, donation, actionType) {
   if (!ngoEmail) return;
 

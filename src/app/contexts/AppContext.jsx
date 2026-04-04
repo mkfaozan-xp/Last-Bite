@@ -1,4 +1,4 @@
-import React, {
+import {
   createContext,
   useContext,
   useState,
@@ -6,12 +6,14 @@ import React, {
   useCallback,
   useRef
 } from "react"
+import { doc, onSnapshot } from "firebase/firestore"
 import { onAuthChange } from "../../services/authService";
 import { getUserProfile } from "../../services/userService";
 import { listenToTransactions } from "../../services/walletService";
 import { listenToUserAlerts } from "../../services/stockAlertService";
 import { listenToCustomerOrders, listenToAllRestaurantOrders } from "../../services/orderService";
 import { toast } from "sonner";
+import { db } from "../../firebase";
 
 const AppContext = createContext(undefined)
 
@@ -37,42 +39,75 @@ export const AppProvider = ({ children }) => {
   // ── Client-side cart ───────────────────────────────────────────────────────
   const [cart, setCart] = useState([])
 
+  const resetProfileState = useCallback((identity = null) => {
+    setCurrentUser(null)
+    setWalletBalance(0)
+    setRewardsPoints(0)
+    setUserName(identity?.displayName ?? "")
+    setUserAvatar(identity?.photoURL ?? "")
+    setUserType(null)
+    setTransactions([])
+    setStockAlerts([])
+    setOrders([])
+    setCart([])
+    ordersRef.current = []
+  }, [])
+
+  const applyUserProfile = useCallback(profile => {
+    if (!profile) {
+      resetProfileState()
+      return
+    }
+
+    setCurrentUser(profile)
+    setIsAuthenticated(true)
+    setWalletBalance(profile.walletBalance ?? 0)
+    setRewardsPoints(profile.rewardsPoints ?? 0)
+    setUserName(profile.name ?? "")
+    setUserAvatar(profile.avatar ?? "")
+    setUserType(profile.userType ?? "customer")
+  }, [resetProfileState])
+
   // ── 1. Listen to Firebase Auth ─────────────────────────────────────────────
   useEffect(() => {
-    const unsub = onAuthChange(async fbUser => {
+    let unsubProfile = () => {}
+
+    const unsub = onAuthChange(fbUser => {
       setFirebaseUser(fbUser)
+      unsubProfile()
       if (fbUser) {
-        try {
-          const profile = await getUserProfile(fbUser.uid)
-          if (profile) {
-            setCurrentUser(profile)
-            setIsAuthenticated(true)
-            setWalletBalance(profile.walletBalance ?? 0)
-            setRewardsPoints(profile.rewardsPoints ?? 0)
-            setUserName(profile.name ?? "")
-            setUserAvatar(profile.avatar ?? "")
-            setUserType(profile.userType ?? "customer")
+        setIsAuthenticated(true)
+        resetProfileState(fbUser)
+
+        unsubProfile = onSnapshot(
+          doc(db, "users", fbUser.uid),
+          async snap => {
+            if (!snap.exists()) return
+
+            try {
+              const profile = await getUserProfile(fbUser.uid)
+              applyUserProfile(profile)
+            } catch (err) {
+              console.error("Failed to load user profile:", err)
+            }
+          },
+          err => {
+            console.error("Failed to watch user profile:", err)
           }
-        } catch (err) {
-          console.error("Failed to load user profile:", err)
-        }
+        )
+
+        return
       } else {
         // Signed out — reset everything
-        setCurrentUser(null)
         setIsAuthenticated(false)
-        setWalletBalance(0)
-        setRewardsPoints(0)
-        setUserName("")
-        setUserAvatar("")
-        setUserType(null)
-        setTransactions([])
-        setStockAlerts([])
-        setOrders([])
-        setCart([])
+        resetProfileState()
       }
     })
-    return unsub
-  }, [])
+    return () => {
+      unsubProfile()
+      unsub()
+    }
+  }, [applyUserProfile, resetProfileState])
 
   useEffect(() => {
     if (!firebaseUser) return
@@ -139,6 +174,9 @@ export const AppProvider = ({ children }) => {
       setStockAlerts(p => p.map(a => (a.id === id ? { ...a, status } : a))),
     []
   )
+  const syncUserProfile = useCallback(profile => {
+    applyUserProfile(profile)
+  }, [applyUserProfile])
 
   return (
     <AppContext.Provider
@@ -166,7 +204,8 @@ export const AppProvider = ({ children }) => {
         removeFromCart,
         clearCart,
         orders,
-        addOrder
+        addOrder,
+        syncUserProfile
       }}
     >
       {children}

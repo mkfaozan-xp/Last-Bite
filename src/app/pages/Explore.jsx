@@ -61,7 +61,6 @@ export default function Explore() {
       <Navigation />
 
       <div className="container mx-auto px-4 py-6 space-y-6">
-        {/* Hero */}
         <motion.div initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} className="text-center space-y-4">
           <div className="flex items-center justify-center gap-2">
             <Sparkles className="h-6 w-6 text-orange-500" />
@@ -93,7 +92,6 @@ export default function Explore() {
           </div>
         </motion.div>
 
-        {/* Categories */}
         <div className="flex gap-4 overflow-x-auto pb-2">
           {categories.map(cat => (
             <motion.div key={cat.id} whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
@@ -110,7 +108,6 @@ export default function Explore() {
           ))}
         </div>
 
-        {/* Tabs */}
         <Tabs defaultValue="near-you" className="w-full">
           <TabsList className="grid w-full max-w-2xl mx-auto grid-cols-3">
             <TabsTrigger value="near-you"><MapPin className="h-4 w-4 mr-2" /> Near You</TabsTrigger>
@@ -118,7 +115,7 @@ export default function Explore() {
             <TabsTrigger value="restaurants">Restaurants</TabsTrigger>
           </TabsList>
 
-          {/* Near You */}
+
           <TabsContent value="near-you" className="mt-6">
             {loading ? (
               <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-6">
@@ -141,7 +138,6 @@ export default function Explore() {
             )}
           </TabsContent>
 
-          {/* Trending */}
           <TabsContent value="trending" className="mt-6">
             {loading ? (
               <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-6">
@@ -162,7 +158,7 @@ export default function Explore() {
             )}
           </TabsContent>
 
-          {/* Restaurants */}
+
           <TabsContent value="restaurants" className="mt-6">
             {loading ? (
               <div className="grid md:grid-cols-3 gap-6">

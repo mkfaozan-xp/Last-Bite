@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { collection, getDocs, query, where, updateDoc, doc } from 'firebase/firestore';
 import { db } from '../../firebase';
 import { createDonation } from '../../services/donationService';
-import { toast } from 'sonner';
+
 
 export function useExpiryEngine() {
   useEffect(() => {
@@ -12,13 +12,15 @@ export function useExpiryEngine() {
         const q = query(collection(db, 'foodItems'), where('isAvailable', '==', true));
         const snap = await getDocs(q);
         const now = new Date();
+        const DONATION_THRESHOLD_MS = 24 * 60 * 60 * 1000; // 24 hours in ms
 
         for (const document of snap.docs) {
           const item = document.data();
           const expiryTime = item.expiryTime?.toDate?.() || new Date();
+          const timeRemaining = expiryTime.getTime() - now.getTime();
 
-          if (expiryTime <= now) {
-            // Food item has expired. We try to convert it.
+          if (timeRemaining <= DONATION_THRESHOLD_MS) {
+            // Food item has 24 hours or less remaining — pull from store and donate to NGO.
             // Mark as unavailable first to prevent double-processing
             const docRef = doc(db, 'foodItems', document.id);
             await updateDoc(docRef, { isAvailable: false });
